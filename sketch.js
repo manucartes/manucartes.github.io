@@ -9,7 +9,8 @@ class Circulo{
   }
   
   dibujar(){
-    circle(this.xPos, this.yPos, 2);
+    noStroke();
+    circle(this.xPos, this.yPos, 4);
   }
   mover(){
     this.xPos = this.xPos + this.xDir*random(1,3);
