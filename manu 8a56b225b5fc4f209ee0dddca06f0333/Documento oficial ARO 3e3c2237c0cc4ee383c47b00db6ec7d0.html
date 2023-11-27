@@ -1,0 +1,748 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documento oficial ARO</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3e3c2237-c0cc-4ee3-83c4-7b00db6ec7d0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⚡</span></div><h1 class="page-title">Documento oficial ARO</h1><p class="page-description"></p></header><div class="page-body"><blockquote id="91e2b800-ec14-4f9e-889b-e08174c744e7" class=""><strong>Docente</strong>: Manuel Cartes Henríquez <p id="983a1435-36ea-462e-b24f-c6ad23580acf" class=""><strong>Asignatura</strong>: Algoritmos y Programación</p></blockquote><h3 id="4b5cd439-88a2-4bdd-8632-ff3dbc3f904c" class="">Python</h3><p id="5b136c30-116c-48bc-b8da-16c6388c0381" class="">Python es un lenguaje de programación interpretado de alto nivel con una filosofía de diseño que enfatiza la legibilidad del código. Es conocido por su sintaxis simple y fácil de aprender, que mejora la legibilidad del código y reduce el costo de mantenimiento del programa. Python permite a los programadores expresar conceptos en menos líneas de código que otros lenguajes como C++ o Java.</p><h3 id="1dde3ce3-e7ff-4f64-b22b-214f2c98b7d8" class="">Función de salida</h3><p id="23942524-3a33-4fbf-8dc7-49cab7b85228" class="">Para mostrar información hacia el usuario, podemos utilizar la función <code>print()</code></p><pre id="43d042e3-85e6-4d4a-b9b1-bf0a278640e9" class="code code-wrap"><code>print(&quot;Mi mensaje&quot;)</code></pre><p id="1723733d-c9ec-4d40-9af9-3f3a9fa2220a" class="">Este código muestra la frase <strong>Mi mensaje</strong>. Notar que cuando quiero mostrar <strong>texto</strong> debe ir entre <mark class="highlight-yellow_background">comillas</mark>.</p><h3 id="9a8455e5-7dd4-4278-bc6a-40712b9abbaa" class="">Concatenar</h3><p id="1e0c60db-d500-4a9f-93d9-69da4f2266cd" class="">Unir texto con variables. Para ello se utiliza la ==coma==.</p><pre id="9216ae3d-71ef-4e92-800a-ab6d46cc9cd9" class="code code-wrap"><code>nombre = &quot;Raul&quot;
+estatura = 1.7
+edad = 27
+print(&quot;Mi nombre es&quot;,nombre, &quot;mi estatura es&quot;,estatura, &quot;[m] y tengo&quot;, edad,&quot;años&quot;)</code></pre><h3 id="4334222d-a439-4f49-9ee5-5c6099453bb9" class="">Variables</h3><p id="271edb92-69f6-41fa-afcb-2fd98f5de0ac" class="">Son palabras o frases, sin espacios ni símbolos que permiten guardar datos en su interior. Fisicamente, estos datos quedan almacenados en memoria <strong>RAM</strong>.</p><p id="91790bf8-f6e7-4d1c-8148-d16e7f2ec8d9" class="">Los datos que puedo almacenar son:</p><ul id="7873ab7c-4f7e-4aba-bd9f-a7181bc66156" class="bulleted-list"><li style="list-style-type:disc">Variables de texto: <code>nombre = &quot;manu&quot;</code></li></ul><ul id="c5db85b7-4192-430f-9ac7-8dadb8175678" class="bulleted-list"><li style="list-style-type:disc">Variables de numeros enteros: <code>edad = 21</code></li></ul><ul id="f4552780-236c-4afd-b85f-acfac2c250da" class="bulleted-list"><li style="list-style-type:disc">Variables de numeros decimales: <code>estatura = 1.7</code></li></ul><h3 id="a1c628ff-1a7e-4759-8340-d894cd7f49a2" class="">Función de entrada</h3><p id="528848b5-ceb4-4acd-8a2e-c158ed676b6e" class="">Permite que el usuario ingrese valores dentro de las variables.</p><pre id="14b2a57d-82e0-41aa-8ca9-99de771b6a85" class="code code-wrap"><code>variable = input(&quot;Ingrese su nombre:&quot;)</code></pre><p id="8a36e233-c861-4a5d-a3ea-d4a0c8a720ba" class=""><strong>IMPORTANTE</strong></p><p id="59ab244b-1e4d-4a21-aa16-d9f7122bce75" class="">La función <code>input()</code> procesa toda la información como si se tratase de <strong>texto</strong>.</p><p id="b9668514-9db5-48c5-a28c-73165f58eeef" class="">Si queremos trabajar con números computables matemáticamente, debemos usar una de estas funciones:</p><ul id="53d1fe25-ba61-4896-9f1d-4ba4556f0528" class="bulleted-list"><li style="list-style-type:disc"><code>int()</code>: Convierte a numero entero.</li></ul><ul id="a700594c-2b7a-494b-bd2a-9cb37c616955" class="bulleted-list"><li style="list-style-type:disc"><code>float()</code>: Convierte a numero decimal</li></ul><p id="7f9de10c-5578-46db-9d17-51f8f8fd4ca0" class=""><strong>Ejemplo</strong></p><pre id="79186861-ea5b-4fcf-8b1b-ff02cccd14e3" class="code code-wrap"><code>nacimiento = int(input(&quot;Ingrese año de nacimiento:&quot;))
+edad = 2023 - nacimiento
+print(&quot;Su edad es&quot;, edad, &quot;años&quot;)</code></pre><h3 id="5170d434-ffcc-46fe-89b8-f32a09b5b450" class="">Condición <code>if</code></h3><p id="6ab0bf15-763a-4d68-a62a-6c604fb947f7" class="">Esta condicion permite que dentro de nuestro algoritmo sea posible tomar una decisión.</p><p id="5c907563-3acb-4360-aeed-e706ca3d5eca" class="">Estas decisiones son del tipo <em>Si sale el sol entonces habrá calor</em>, <em>Si el numero es mayor a 5 entonces el programa se volverá a repetir</em>.</p><p id="5532b2c5-8a50-4c90-8cd1-9ff0432a7e60" class=""><strong>SINTAXIS</strong></p><pre id="32273e8f-71b3-445f-9b47-6bda6a57dc05" class="code code-wrap"><code>if COMPARACION:  
+	#CODIGO SI LA COMPARACION SE CUMPLE
+else:  
+	#CODIGO SI LA COMPARACION NO SE CUMPLE</code></pre><h3 id="16b4b863-5253-4cbd-9392-91c890e3a85e" class="">¿Que comparaciones son permitidad dentro del <code>if</code>?</h3><table id="1073707a-ac00-4bfa-828e-0f03b13e029c" class="simple-table"><tbody><tr id="e1b12a65-6601-430d-8998-b2cbe7ee0a6b"><td id="rwx=" class=""><strong>Comparación</strong></td><td id="f=x{" class=""><strong>Simbolo</strong></td></tr><tr id="59f6f840-f326-47ff-b8a1-c97fa1df02db"><td id="rwx=" class="">Igual a</td><td id="f=x{" class="">==</td></tr><tr id="becbdd85-1693-4f36-b45b-b767c2bf483f"><td id="rwx=" class="">Mayor a</td><td id="f=x{" class="">&gt;</td></tr><tr id="7f43ab64-7840-455b-aef0-caaf8795b2e0"><td id="rwx=" class="">Mayor o igual a</td><td id="f=x{" class="">&gt;=</td></tr><tr id="543b36d2-e403-4bd4-9d40-c9007a3f0a26"><td id="rwx=" class="">Menor a</td><td id="f=x{" class="">&lt;</td></tr><tr id="7682bc7a-9cd0-4ee2-b9b9-053a69672c13"><td id="rwx=" class="">Menor o igual a</td><td id="f=x{" class="">&lt;=</td></tr><tr id="164d9b72-ea90-4253-a652-338590bc2a28"><td id="rwx=" class="">Distinto</td><td id="f=x{" class="">!=</td></tr></tbody></table><h3 id="d8c5f840-f545-402a-ae0a-e5f6a9231c03" class="">Ejercicios</h3><ol type="1" id="36c282e6-682e-4c83-aa4a-782b2757ba02" class="numbered-list" start="1"><li>Crear algoritmo que solicite el promedio final de una asignatura e indique si el estudiante aprueba o reprueba.<blockquote id="f1518ebd-7c47-42d8-80c6-697d793850e4" class="">Ingrese su promedio final: 3.7<p id="453fbc66-ebec-469e-9388-c63c79fd3d25" class="">REPROBADO</p></blockquote><blockquote id="9e95e7b6-f64a-4f10-a718-dece9ce65183" class="">Ingrese su promedio final: 4.0<p id="5ac23cac-073e-4490-aeef-3f224de2a9c6" class="">APROBADO</p></blockquote></li></ol><ol type="1" id="3a5d7500-dbdc-41a3-b384-9788db6d14c5" class="numbered-list" start="2"><li>Crear algoritmo que haga un descuento si se compran mas de 7 unidades.<blockquote id="0bf0c488-2f56-441f-b910-d0069c6a34b4" class="">Ingrese cantidad de productos a comprar: 5<p id="669816df-eab9-498a-aac4-b2cc3f18dbab" class="">PRECIO NORMAL</p></blockquote><blockquote id="32ca16ac-ee79-4406-a8e6-3c15b627f67a" class="">Ingrese antidad de productos a comprar: 9<p id="31aa8e44-4243-4e67-a018-32334469b4df" class="">SU COMPRA TIENE DESCUENTO</p></blockquote></li></ol><ol type="1" id="bdac7094-98db-412f-b230-637ebf05f5d0" class="numbered-list" start="3"><li>Para el ejercicio anterior, si cada producto normalmente cuesta $1000, aplicar un descuento del 45% si se llevan mas de 7 productos.<blockquote id="584cb249-f06e-46d2-9c9d-89f53116871c" class="">Cuantos productos desea llevar? : 3<p id="122e5837-d69b-41e2-aa71-bf230ae3c19d" class="">EL total es $3000</p></blockquote><blockquote id="c0ff8fca-dbeb-46a0-9e29-62519d556fea" class="">Cuantos productos desea llevar?: 9<p id="1f20da72-f140-478c-b8b1-f71a5def2bf2" class="">Se aplica descuento.</p><p id="c069d481-ab4f-4a7a-b041-f3e44c2aa5e8" class="">EL total es $4950</p></blockquote><p id="71c5f876-5a45-4b34-a0e8-865a23a94a60" class=""><strong>SOLUCION</strong></p><pre id="20bfcea8-fadc-471e-a421-6efaee6bd180" class="code code-wrap"><code>cantidad = int(input(&quot;Ingrese cantidad de productos:&quot;))
+if cantidad &gt; 7:    
+	total = 1000*cantidad*0.55    
+	print(&quot;Se aplica descuento&quot;)    
+	print(&quot;El total es $&quot;, total)
+else:    
+	total = 1000*cantidad    
+	print(&quot;Sin descuento&quot;)    print(&quot;El total es $&quot;,total)</code></pre></li></ol><ol type="1" id="88bec18f-97db-40a2-8563-cd956781bcac" class="numbered-list" start="4"><li>Crear algoritmo que solicite al usuario su año de nacimiento y determine si es mayor de edad o no.<blockquote id="c90ad578-5293-47e6-b7f4-e2770c44c120" class="">Ingree año de nacimiento: 2000<p id="cd82d95a-d8f8-4862-9d1a-bf6475ac3396" class="">Su edad es 23 años y es mayor de edad</p></blockquote><p id="e13f4500-7109-46e4-8f21-ec3104a74430" class=""><strong>SOLUCION</strong></p><pre id="4d0416c8-c8ff-4fa0-b20e-18fd5bddf5c8" class="code code-wrap"><code>nacimiento = int(input(&quot;Ingrese su año de nacimiento:&quot;))
+edad = 2023 - nacimiento
+if edad &gt;= 18:    
+	print(&quot;Su edad es&quot;,edad, &quot;años y es mayor de edad&quot;)
+else:    
+	print(&quot;Su edad es&quot;, edad, &quot;años y es menor de edad&quot;)</code></pre></li></ol><ol type="1" id="299ecb9e-4a09-47be-a7f4-7bfe15a9ac80" class="numbered-list" start="5"><li>Crear algoritmo que solicite dos numeros e indique cual de los dos es el mayor.<blockquote id="2f642105-711c-4fca-8a71-f31cf909d92a" class=""><em>Ingrese primer numero: 3</em><p id="66ca7836-2708-43bb-a5b7-6fc6ad6879bf" class=""><em>Ingrese segundo numero: 7</em></p><p id="dff727da-bcfe-4da3-bff6-78541c299b25" class=""><em>EL segundo numero es mayor</em></p></blockquote><blockquote id="c05df62f-427d-49f2-b388-d67dab4b7746" class=""><em>Ingrese primer numero: 20</em><p id="d188b987-ee07-42c4-8583-b875984476a5" class=""><em>Ingrese segundo numero: 8</em></p><p id="78298bd0-3ec6-43c9-be64-1e981fc5fc4c" class=""><em>El primer numero es mayor</em></p></blockquote><p id="f835b5b6-79bd-449d-9225-e909fbc287cd" class=""><strong>SOLUCION</strong></p><pre id="1986897d-fcab-4d24-9930-8e9457365dc6" class="code code-wrap"><code>num1 = int(input(&quot;Ingrese primer numero:&quot;))
+num2 = int(input(&quot;Ingrese segundo numero:&quot;))
+if num1 &gt; num2:    
+	print(&quot;El primer numero es mayor&quot;)
+elif num1 == num2:    
+	print(&quot;Numeros iguales&quot;)
+else:    
+	print(&quot;Segundo numero mayor&quot;)</code></pre></li></ol><ol type="1" id="97ef0d4b-a280-41e7-90cb-474638a0be1c" class="numbered-list" start="6"><li>Crear algoritmo que solicite la resolucion de una imagen y los clasifique segun su calidad. </li></ol><p id="bbddf91c-fcb6-413e-8938-269c70edcd59" class="">| Resolucion | Calidad | | ———- | ——– | |&lt; 720 |SD| | 720 | HD | | 1080 | Full HD | | 2160 | Ultra HD |</p><blockquote id="649456ab-249b-46b1-a4fd-db537e14a2bb" class="">Ingrese resolucion: 1080<p id="44bbfd63-d217-4863-b8cc-b60e788ddb57" class="">Calidad Full HD</p></blockquote><p id="a1e6bcc5-449a-45e2-89ca-cc112f25ba87" class=""><strong>SOLUCION</strong></p><pre id="c7b081e4-662d-4bae-b173-b54297a5833f" class="code code-wrap"><code>res = int(input(&quot;Ingrese resolucion:&quot;))
+if res &lt; 720:    
+	print(&quot;Calidad SD&quot;)
+elif res == 720:    
+	print(&quot;Calidad HD&quot;)
+elif res == 1080:   
+	print(&quot;Calidad Full HD&quot;)
+elif res == 2160:    
+	print(&quot;Calidad Ultra HD&quot;)
+else:    
+	print(&quot;Resolucion no permitida&quot;)</code></pre><ol type="1" id="b4925ec7-7e92-44c0-b90a-85847d8a97b7" class="numbered-list" start="1"><li>Crear algoritmo que solicite un numero y lo multiplique por 100. Si el numero es negativo debe convertirse a positivo e indicarselo al usuario.<blockquote id="b13fc391-f37a-407f-953c-c84f3f54e969" class="">Ingrese numero : 3<p id="f27e1f68-97f2-4524-bbe3-3a071752a5c0" class="">El resultado es 300</p></blockquote><blockquote id="e1c418da-2b71-46e6-9569-06eeadf12619" class="">Ingrese numero: -5<p id="1f6b867d-bb52-4246-9f33-a9fa8b62eb42" class="">Convirtiendo a positivo… 5</p><p id="c0f91bea-c87d-4528-956a-0f412e5f8dec" class="">EL resultado es 500</p></blockquote><pre id="898294ff-c3e9-4608-a930-31fc503cadb8" class="code code-wrap"><code>num = int(input(&quot;Ingrese numero:&quot;))#Verificamos si es negativo
+
+if num &lt; 0:  
+  #Conversion a positivo    
+	num = num * -1   
+	print(&quot;Convirtiendo a positivo...&quot;, num)    
+	resultado = num*100    
+	print(&quot;El resultado es&quot;,resultado)
+else:    
+	resultado = num * 100    
+	print(&quot;El resultado es&quot;, resultado)</code></pre></li></ol><h3 id="c106581c-36d9-493b-9784-0417805a9e16" class="">Ciclo <code>for</code></h3><ul id="24fc2979-948a-4006-8e31-eeae90d1fa57" class="bulleted-list"><li style="list-style-type:disc">Uno de los usos es generar números entre un rango.</li></ul><ul id="e2fbddec-8e1f-47b5-99b2-fefda370cd23" class="bulleted-list"><li style="list-style-type:disc">El ciclo <code>for</code> tambien se utiliza para recorrer <strong>listas</strong>.</li></ul><h3 id="fb9de683-9b1e-4e03-b982-bf31e64f4973" class="">Generando números dentro de un rango</h3><p id="fb27d505-1789-4c24-8cc7-3a81bb1c214f" class=""><strong>SINTAXIS</strong></p><pre id="f84bcbca-8c1d-474f-a075-64cd2464ba2a" class="code code-wrap"><code>for i in range(7):  
+	#AQUI ESCRIBO MI CODIGO  
+	#PUEDEN SER VARIAS LINEAS DE CODIGO
+	print(&quot;Hola!&quot;)</code></pre><h3 id="63aee30c-6472-4a55-852c-328cad8ae36c" class="">Modos de uso</h3><ul id="95829614-bf8c-4fce-8c5c-1252c995663c" class="bulleted-list"><li style="list-style-type:disc"><code>range(21)</code>: Cuenta desde 0 hasta 20. El código del interior se ejecuta 20 veces en este caso.</li></ul><ul id="b6420b73-52a3-4d9d-ac20-b39dee9bdf19" class="bulleted-list"><li style="list-style-type:disc"><code>range(5,21)</code>: Cuenta desde 5 hasta 20. El código del interior se ejecuta 15 veces en este caso.</li></ul><ul id="bf7d6b1c-f3a4-46c5-8a21-af65d0e07e5e" class="bulleted-list"><li style="list-style-type:disc"><code>range(10, 21, 2)</code>: Cuenta desde 10 hasta 20 con incrementos de 2. El código del interior se ejecuta 5 veces en este caso.</li></ul><h3 id="2cab10bd-8c64-4693-909a-c35fe0638903" class="">Listas</h3><p id="9dbe7315-26bf-4ba7-819d-53e930ea8763" class="">Son variables que pueden almacenar muchos valores en un interior. Cada uno de estos valores tiene un posición dado por su <strong>índice</strong>.</p><p id="a3d47173-2c8b-4218-8ded-5376bdfa52eb" class=""><strong>EJEMPLO DE UNA LISTA</strong></p><p id="2d3db5ac-b5d2-4607-854a-4454dbe6ef71" class=""><code>mi_lista = [2,7,23,0,12,9]</code></p><table id="4ae57b55-cfac-43ca-838d-bcf0d853770d" class="simple-table"><tbody><tr id="40b6bd19-3005-4c9f-a8c2-f4683635e501"><td id="BdHu" class=""><strong>0</strong></td><td id="|wG&gt;" class=""><strong>1</strong></td><td id="WbnA" class=""><strong>2</strong></td><td id="}aK;" class=""><strong>3</strong></td><td id="Rs[r" class=""><strong>4</strong></td><td id="CBM}" class=""><strong>5</strong></td></tr><tr id="e99e8506-4a5d-4ef9-b790-538e7fb49dad"><td id="BdHu" class="">2</td><td id="|wG&gt;" class="">7</td><td id="WbnA" class="">23</td><td id="}aK;" class="">0</td><td id="Rs[r" class="">12</td><td id="CBM}" class="">9</td></tr></tbody></table><p id="4d167c69-877f-4f93-8a73-9afd584d166c" class=""><strong>EJEMPLO DE USO CON CICLO FOR</strong></p><pre id="23c3b0f5-05ed-4ed5-bb14-f7ce2fe02102" class="code code-wrap"><code>edades = [18,20,24,19]
+for i in edades:    
+	print(&quot;La edad es&quot;,i)</code></pre><blockquote id="ac9b7906-3744-43ac-9565-f9bdc91f81f8" class="">La edad es 18 La edad es 20 La edad es 24 La edad es 19</blockquote><h3 id="915eac71-2642-48c4-a05c-ae9de853a9d1" class="">Métodos de listas</h3><ul id="58b8d5cd-fda0-4f17-b318-ba854a8bfc9e" class="bulleted-list"><li style="list-style-type:disc"><code>.append(valor)</code>: Añade <strong>valor</strong> a la lista.</li></ul><ul id="5cd3f485-4c24-4229-a4fb-bdae8fdfce6e" class="bulleted-list"><li style="list-style-type:disc"><code>.pop(indice)</code>: Borra un elemento en el <strong>indice</strong> especificado.</li></ul><ul id="3e4c4040-d741-4eb3-bac8-220985a024c4" class="bulleted-list"><li style="list-style-type:disc"><code>.remove(valor)</code>: Busca a <strong>valor</strong> y lo elimina. Solo elimina al primer valor que encuentra.</li></ul><ul id="f55c8b77-a690-4907-8da5-d80e399c7e4a" class="bulleted-list"><li style="list-style-type:disc"><code>.sort()</code>: Ordena la lista de menor a mayor.</li></ul><ul id="e51aa4d1-1138-482b-9901-d71f2621f18f" class="bulleted-list"><li style="list-style-type:disc"><code>.sort(reverse=True)</code>: Ordena la lista de mayor a menor. La <strong>T</strong> de <strong>T</strong>rue debe ir en <mark class="highlight-yellow_background">mayúscula</mark>.</li></ul><h3 id="10a46643-a3eb-4011-bac9-026d9f525a1e" class="">¿Como calcular si un numero es par o impar?</h3><p id="a0db578d-5a82-4ba2-bca6-119d620c60f4" class="">Se debe calcular su resto con el operador <code>%</code>.</p><p id="2b3eebd5-9587-4b9f-84ad-0d390e5b121a" class=""><strong>Ejemplo 1:</strong></p><pre id="4c454235-9faa-443f-9394-489c75494006" class="code code-wrap"><code>num = 4
+res = num %2
+print(res)</code></pre><p id="06687447-c330-4339-966d-c66ba7d440fd" class="">En este ejemplo el resultado es <strong>0</strong> debido a que el resto de $\frac{4}{2}$ es 0.</p><p id="edab03d8-5159-4b30-a1ab-2e03fef0ede4" class=""><strong>Ejemplo 2:</strong></p><pre id="29bdc3e1-62d8-41a4-9629-1f0bcbb8ce3a" class="code code-wrap"><code>num = 5
+res = num %2
+print(res)</code></pre><p id="ae659384-1352-4e2f-8515-4c5d452fd519" class="">En este ejemplo el resultado es <strong>1</strong> debido a que el resto de <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>5</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{5}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span> es 1.</p><p id="9a791ca4-0ed4-4ae2-b466-48523639f59c" class=""><strong>¿Y si queremos decirle al usuario si es par o impar con palabras?</strong></p><p id="cf5f10c3-e3ad-41ca-ba67-8359e163a9ed" class="">Para esto solo necesitas una condicion <code>if</code>.</p><p id="7ed561f7-9dfa-4c55-95fe-70902143f330" class=""><strong>Ejemplo</strong></p><pre id="c21a822b-8c43-4422-afda-d9241b53cf07" class="code code-wrap"><code>num = 4
+res = num %2
+print(res)
+if res == 0:  
+	print(&quot;El numero es par&quot;)
+else:  
+	print(&quot;El numero es impar&quot;)</code></pre><h3 id="ca39f0bf-ce5b-4e26-aebb-f7509be16c67" class="">Ejercicios</h3><ol type="1" id="beaaf778-0e64-4bb3-b50e-12c2b8dd1805" class="numbered-list" start="1"><li>Escribir un programa que solicite un numero al usuario y muestre todos los valores desde 0 hasta ese número. <strong>SOLUCIÓN</strong><pre id="73be4ff6-698c-4ade-9e8c-6ee9f78ed4e2" class="code code-wrap"><code>num = int(input(&quot;Ingrese numero:&quot;))
+for i in range(num+1):  
+	print(i)</code></pre></li></ol><ol type="1" id="132091ce-1545-4afd-b87d-68538645aacf" class="numbered-list" start="2"><li>Escribir un programa que pida un numero y calcule la suma de todos los numeros desde 0 hasta el numero ingresado por el usuario. <strong>SOLUCION</strong><pre id="39d46b05-f35a-4841-9b8e-e6c2a99026c7" class="code code-wrap"><code>suma = 0
+num = int(input(&quot;Ingrese numero:&quot;))
+for i in range(num+1):  
+	suma = suma + i
+	print(suma)</code></pre></li></ol><ol type="1" id="4bdecb70-90b9-42ae-b940-9af44e156dfa" class="numbered-list" start="3"><li>Dada la lista <strong>[4,7,9,2,1,5]</strong>, crear un algoritmo que calcule la suma de todos los elementos de la lista.<p id="b94320c7-9cb3-4ba7-8b60-7ac36ba912ee" class=""><strong>SOLUCION</strong></p><pre id="99cfe956-e691-41d4-beeb-4fa2873477df" class="code code-wrap"><code>suma = 0
+lista = [4,7,9,2,1,5]
+for i in lista:    
+	suma = suma + i
+	print(suma)</code></pre></li></ol><ol type="1" id="5845bf80-86e1-4ca5-883c-19589c536aef" class="numbered-list" start="4"><li>Crear algoritmo que solicite al usuario 5 numeros, los almacene en una lista y muestre la suma y multiplicacion de todos los numeros. <strong>Ejemplo</strong><blockquote id="25acaee2-f89b-4677-9cd1-6b539b9b8a54" class="">Ingrese numero 1: 1<p id="6647b838-137e-41ed-99d3-8561aab94f5f" class="">Ingrese numero 2: 2</p><p id="84dbb017-1351-4d0f-84ce-d6de17ed1316" class="">Ingrese numero 3: 3</p><p id="c49dc24d-ba0b-45da-ad35-2db0a6a75df6" class="">Ingrese numero 4: 2</p><p id="12339e97-7a3f-4bff-8a62-ef41bc874fab" class="">Ingrese numero 5: 1</p><p id="6ef83d65-9294-4270-a8bb-30a1a54580ae" class="">[1,2,3,2,1]</p><p id="4f63c614-bc0e-4487-af3b-6185f1767a5f" class="">La suma es 9</p><p id="d2709209-f304-442a-bd6a-02eea3a8e101" class="">La multiplicacion es 12</p></blockquote></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
