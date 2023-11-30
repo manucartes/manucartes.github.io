@@ -1,0 +1,771 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documento oficial IRA</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="75ecd6c6-99bc-4d8e-aaea-db30a5983949" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_10.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⚡</span></div><h1 class="page-title">Documento oficial IRA</h1><p class="page-description"></p></header><div class="page-body"><p id="75189acf-7737-4ae8-b874-e86113e6b20b" class="">
+</p><blockquote id="09a03b11-6711-4cf0-9a0a-75d913125294" class="">Docente: Manuel Cartes Henríquez<p id="76d4197a-7453-4a96-bacc-acd960fbe8bc" class="">Asignatura: Algoritmos y Programación</p></blockquote><p id="2b613b51-f558-481c-a1da-ad577713b530" class="">
+</p><p id="46fdbb4c-b6e9-49ed-a082-63aecbf8322b" class="">
+</p><nav id="b28c27e5-a569-4129-b82b-e94a64a3c4f4" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#336ac575-0af7-4967-ab37-a997f474db21">¿Que es Python?</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#804df638-4e86-45e8-a100-8972c395ef30">Función de salida</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8877f35e-c8ed-4cdb-a9c1-c5209bb9e3f0">Concatenar</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#639f04dc-c616-4624-b02d-c703d7d9c581">Variables</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8a578c6f-2074-4d54-8a35-ab8e73b0992f">Función de entrada</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9192eb80-53fd-4cb9-88dc-317ff6a2c851">Condición <code>if</code></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2f51030c-3fb3-4c57-bf54-24b74eec8e5a">¿Que tipo de comparaciones existen?</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6a020341-98eb-43e5-a514-3b0e2d25f2c5">Ejercicio</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#89a3494e-d057-4d22-8e1a-18f079a3bd22">Ciclo <code>for</code></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6b1d3447-daca-4da9-b4f7-f37df3ef9c13">Formas de usar <code>range()</code></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9fd1e9ec-2b98-4162-a905-699f9103df91">Ejercicio</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b12f8f07-d393-49f2-848a-2774a399bb8f">Listas</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2c992538-7cf3-4f99-b896-99e05177d898">Recorriendo una lista con ciclo <code>for</code></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#88fc1964-37c1-49a7-a1e6-c44fa487cf71">Ejercicio</a></div></nav><h3 id="336ac575-0af7-4967-ab37-a997f474db21" class="">¿Que es Python?</h3><p id="bb9c4e85-51c0-4939-a9aa-c9de6fd659ce" class="">Python es un lenguaje de programación interpretado, de alto nivel y de propósito general. Creado por Guido van Rossum y lanzado por primera vez en 1991, Python tiene un diseño filosófico que enfatiza la legibilidad del código, y una sintaxis que permite a los programadores expresar conceptos en menos líneas de código de lo que sería posible en lenguajes como C++ o Java. Se utiliza para una amplia variedad de aplicaciones, incluyendo desarrollo web, análisis de datos, aprendizaje automático, inteligencia artificial y desarrollo de software.</p><h3 id="804df638-4e86-45e8-a100-8972c395ef30" class="">Función de salida</h3><p id="ec302c20-9252-418e-90ff-599eeead1f73" class="">Para mostrar información hacia el usuario, podemos utilizar la función <code>print()</code></p><pre id="718827bb-b7b4-48aa-84d1-52ba119d48e0" class="code code-wrap"><code>print(&quot;Mi mensaje&quot;)
+</code></pre><p id="2fce9396-a139-4e9a-9007-e2322857fa9b" class="">Este código muestra la frase <strong>Mi mensaje</strong>. Notar que cuando quiero mostrar <strong>texto</strong> debe ir entre <mark class="highlight-yellow_background">comillas</mark>.</p><h3 id="8877f35e-c8ed-4cdb-a9c1-c5209bb9e3f0" class="">Concatenar</h3><p id="2aceb5eb-9bae-49c6-a05c-64c72077deb1" class="">Unir texto con variables. Para ello se utiliza la ==coma==.</p><pre id="f68b6d65-27ef-469e-bbf7-35ba8e499178" class="code code-wrap"><code>nombre = &quot;Raul&quot;
+estatura = 1.7
+edad = 27
+
+print(&quot;Mi nombre es&quot;,nombre, &quot;mi estatura es&quot;,estatura, &quot;[m] y tengo&quot;, edad,&quot;años&quot;)
+</code></pre><h3 id="639f04dc-c616-4624-b02d-c703d7d9c581" class="">Variables</h3><p id="a698d894-99a1-4ffa-a585-edac16e569b1" class="">Son palabras o frases, sin espacios ni símbolos que permiten guardar datos en su interior. Fisicamente, estos datos quedan almacenados en memoria <strong>RAM</strong>.</p><p id="4de31f62-c8f0-4eb0-916a-56fc80f2ad1b" class="">Los datos que puedo almacenar son:</p><ul id="bebfc25c-2c66-4f94-a0e6-0e1172bb73d5" class="bulleted-list"><li style="list-style-type:disc">Variables de texto: <code>nombre = &quot;manu&quot;</code></li></ul><ul id="00f5214f-ff98-49f3-bfc6-a8a5142be7c6" class="bulleted-list"><li style="list-style-type:disc">Variables de numeros enteros: <code>edad = 21</code></li></ul><ul id="1a48e870-368a-4fe3-8273-74c870655180" class="bulleted-list"><li style="list-style-type:disc">Variables de numeros decimales: <code>estatura = 1.7</code></li></ul><h3 id="8a578c6f-2074-4d54-8a35-ab8e73b0992f" class="">Función de entrada</h3><p id="107c02b7-73ac-451e-879d-0be432f1d0d9" class="">Se utiliza para que el usuario interactue con las variables del programa. Esta función corresponde a <code>input()</code>.</p><p id="56983daa-e85d-46d4-8410-3b8fb9a414f4" class=""><strong>Ejemplo</strong></p><pre id="b575a8db-3cf2-4b78-863d-5a5599ad6783" class="code code-wrap"><code>edad = input(&quot;Ingrese su edad:&quot;)
+print(&quot;Su edad es&quot;, edad)
+</code></pre><p id="9dc2e4bc-5210-4f35-9878-bf7ff45e24a7" class="">Notar que dentro del <code>input()</code> podemos escribir un texto para indicarle al usuario que dato debe escribir.</p><p id="8423f656-6f4c-4ca1-ae95-264aca3111e7" class=""><strong>⚠️ IMPORTANTE</strong></p><p id="3fe54a12-b31b-49a3-92a3-9a19a2aa898d" class="">La función <code>input()</code> procesa todo lo que es escriba (incluso números) como si se tratase de <strong>texto</strong>.</p><p id="5fbd7e3f-cfda-4043-8abd-e0cac4151462" class="">Si queremos trabajar con aquellos números para hacer operaciones matemáticas debemos convertirlos con una de las siguientes funciones.</p><ul id="cb168532-b9b6-40d8-a594-c0ffc92d2ee0" class="bulleted-list"><li style="list-style-type:disc"><code>int()</code>: Convierte a <strong>número entero</strong>.</li></ul><ul id="c080b0b5-7cb3-4865-9e9f-ede983feb9b8" class="bulleted-list"><li style="list-style-type:disc"><code>float()</code>: Convierte a <strong>número decimal</strong>.</li></ul><p id="83d0c7f6-2e9b-410d-8f4b-f15822afa3f8" class=""><strong>Ejemplo</strong></p><pre id="a68f0898-a7e4-4a1b-b935-9be2209129f4" class="code code-wrap"><code>a = int(input(&quot;Ingrese a:&quot;))
+b = int(input(&quot;Ingrese b:&quot;))
+
+suma= a + b
+
+print(&quot;La suma es&quot;, suma)
+</code></pre><p id="1970133e-001b-41fb-954d-2223f1d30ee2" class=""><em>Si quisiéramos trabajar con decimales debe utilizar la función </em><code><em>float()</em></code></p><h3 id="9192eb80-53fd-4cb9-88dc-317ff6a2c851" class="">Condición <code>if</code></h3><p id="2f7899ff-2fb0-475f-a368-f3205e4aa63f" class="">Se utiliza para tomar una <strong>decisión</strong> basada en una comparación.</p><p id="9cddfe80-009d-4825-9013-7fc1c885ba19" class="">![img0](/Users/manucartes/Desktop/S2/Algoritmos y Programacion/Documentos IRA/img0.png)</p><p id="630493f9-b121-4691-ac27-f22bc428da5e" class=""><strong>SINTAXIS</strong></p><pre id="6764da27-e2e8-4c72-a35f-26b77bfdb85e" class="code code-wrap"><code>if COMPARACION:
+	#CODIGO QUE SE EJECUTA SI LA COMPARACION ES VERDADERA
+else:
+  #CODIGO QUE SE EJECUTA SI LA COMPARACION ES FALSA
+</code></pre><p id="b17e1900-14e1-4bc1-a92f-f8fbe54f0d34" class="">⚠️ ==IMPORTANTE==</p><p id="bc0363a5-5c7e-4904-a870-9ccb7fd32a92" class="">La condición <code>if</code> tiene bloques <strong>identados</strong> , es decir, el código que está en el interior de la condición debe tener <strong>tabulación</strong>, tal como se ve en la linea <strong>2</strong> y <strong>4</strong> en el bloque de código anterior.</p><h3 id="2f51030c-3fb3-4c57-bf54-24b74eec8e5a" class="">¿Que tipo de comparaciones existen?</h3><table id="c1dc09aa-3ecb-4f4f-8aa9-dbc6ea56fee3" class="simple-table"><tbody><tr id="ec5ea1c2-ee85-4b3e-9a23-b515a9eea045"><td id="TKj{" class="">Comparación</td><td id="jnRz" class="">Simbolo</td></tr><tr id="1f49a64a-6ebc-4949-b492-6becb6f8d9b7"><td id="TKj{" class="">Igual a</td><td id="jnRz" class="">==</td></tr><tr id="b45018d1-b3dd-456d-af47-14cf132ef9bf"><td id="TKj{" class="">Mayor a</td><td id="jnRz" class="">&gt;</td></tr><tr id="fedce904-01d7-44fe-b20c-422c547dcefa"><td id="TKj{" class="">Mayor o igual a</td><td id="jnRz" class="">&gt;=</td></tr><tr id="86f6bf81-ad92-42d9-afc0-04b119cf5489"><td id="TKj{" class="">Menor a</td><td id="jnRz" class="">&lt;</td></tr><tr id="d711ddd5-bf69-4759-a186-03039807659e"><td id="TKj{" class="">Menor o igual a</td><td id="jnRz" class="">&lt;=</td></tr><tr id="9a884a40-ea36-452f-aaa3-56fb7be86b79"><td id="TKj{" class="">Distinto</td><td id="jnRz" class="">!=</td></tr></tbody></table><h3 id="6a020341-98eb-43e5-a514-3b0e2d25f2c5" class="">Ejercicio</h3><ol type="1" id="039a37ee-42cb-4f85-ad8e-1592a5e1b6ac" class="numbered-list" start="1"><li>Crear un algoritmo que solicite la temperatura del procesador. Si la temperatura es mayor a 70ºC, se deberá mostrar un mensaje que diga <strong>Ventilador encendido</strong>, si la temperatura, es 70ºC o menos, el mensaje deberá decir <strong>Ventilador apagado</strong>.<blockquote id="12b66fd8-6120-476a-be7b-06d9b677cc46" class="">Ingrese temperatura del procesador: 81<p id="0343553c-d120-4656-b5fb-2018940da09b" class="">Ventilador encendido</p></blockquote><blockquote id="b1edc003-eb93-4b1f-a0c4-a7f2481a966a" class="">Ingrese temperatura del procesador: 65<p id="42bf3cdc-2cdc-4a90-b5ea-43bc3d9e2c65" class="">Ventilador apagado</p></blockquote><p id="b84c4764-f1c1-4532-a570-e89f2d61dff7" class=""><strong>SOLUCIÓN</strong></p><pre id="893f712d-d2bc-4692-8269-d035221274e6" class="code code-wrap"><code>temperatura = float(input(&quot;Ingrese temp:&quot;))
+
+if temperatura &gt;= 70:
+    print(&quot;Ventilador encendido&quot;)
+else:
+    print(&quot;Ventilador apagado&quot;)
+</code></pre></li></ol><ol type="1" id="680d03e0-0ff2-4c1a-bde3-27cf42836179" class="numbered-list" start="2"><li>Crear algoritmo que solicite la cantidad de productos a comprar. Si se compran mas de 5 productos, el sistema aplicará un descuento.<blockquote id="47cc02ab-0330-4d9a-ad7a-ca72be8ed360" class="">Ingrese cantidad de productos: 3<p id="78996634-d087-40a7-9352-06cee82e0776" class="">Compra sin descuento.</p></blockquote><blockquote id="23cf34fc-522d-4168-8323-a5287721d004" class="">Ingrese cantidad de productos: 7<p id="f9b8d41b-bd02-4142-a6d2-f09539bd17ce" class="">Compra con descuento.</p></blockquote><p id="8d2fef4d-7aff-4f1a-bd88-fe567890e416" class=""><strong>SOLUCION</strong></p><pre id="1de9ff3e-ac55-4afc-95d1-325cdae351b2" class="code code-wrap"><code>cantidad = int(input(&quot;Ingrese cantidad de productos:&quot;))
+
+if cantidad &gt; 5:
+  print(&quot;Compra con descuento&quot;)
+else:
+  print(&quot;Compra sin descuento&quot;)
+</code></pre></li></ol><ol type="1" id="fd5e9fff-9a21-4410-b167-904fe41af738" class="numbered-list" start="3"><li>Para el ejercicio anterior considerar que cada producto tiene un valor $1.000. EL descuento será de un 30% del total.<blockquote id="eefb05d8-5ea4-4f9a-ac81-1c252dd7b432" class="">Ingrese cantidad: 10<p id="7dc11e82-6a77-4568-ba33-1511fb6ab117" class="">Se aplica descuento</p><p id="288f2f65-21ca-48cc-bfb7-4c79d75d195b" class="">El total es $7000</p></blockquote><blockquote id="742e82f9-5464-4940-a9c7-0fd058333929" class="">Ingrese cantidad: 3<p id="7d2b0e19-5d16-4fe3-b812-3957320f5737" class="">Sin descuento</p><p id="9f922c03-5202-4da6-87db-b916ac6fe47c" class="">El total es $3000</p></blockquote><p id="4152411c-7b20-4478-b943-60ab7ca86c7b" class=""><strong>SOLUCION</strong></p><pre id="c219e9a8-f6d3-4fb1-9fc5-e2d8c40d98dd" class="code code-wrap"><code>cantidad = int(input(&quot;Ingrese cantidad:&quot;))
+
+if cantidad &gt;5:
+    total = cantidad * 1000 * 0.7
+    print(&quot;Se aplica descuento&quot;)
+    print(&quot;El total es $&quot;,total )
+else:
+    total = cantidad * 1000
+    print(&quot;No se aplica descuento&quot;)
+    print(&quot;El total es $&quot;, total)
+</code></pre></li></ol><ol type="1" id="b6dbdf92-96bf-4f7a-911d-0babf05cfffd" class="numbered-list" start="4"><li>Crear algoritmo que calcule el promedio de 3 notas.<blockquote id="958b5843-663d-4286-b1ab-4684bf7dae47" class="">Ingrese nota 1: 5<p id="1ea28892-af0f-49bf-8711-882ad0208b5e" class="">Ingrese nota 2: 3</p><p id="a405869d-9cdb-40a9-85c3-e3429258c9a3" class="">Ingrese nota 3: 4.5</p><p id="b3ae2724-cfc3-4f75-abf5-6e75bdd3ed30" class="">El promedio es 4.16</p></blockquote><p id="f08a8569-a368-4965-8c43-a896403851c3" class=""><strong>SOLUCION</strong></p><pre id="49003c3b-d41f-4972-bcb3-5403db58d056" class="code code-wrap"><code>n1 = float(input(&quot;Ingrese nota 1:&quot;))
+n2 = float(input(&quot;Ingrese nota 2:&quot;))
+n3 = float(input(&quot;Ingrese nota 3:&quot;))
+
+promedio = (n1+n2+n3) / 3
+
+if promedio &gt;= 4:
+  print(&quot;Aprueba con un&quot;, promedio)
+else:
+  print(&quot;Reprueba con un&quot;, promedio)
+</code></pre></li></ol><ol type="1" id="f5109f44-2bd1-4425-ae97-2ffba3df6dda" class="numbered-list" start="5"><li>Crear algoritmo que solicite dos numeros e indique cual de los dos es mayor.<blockquote id="81d382e9-f04c-4718-b35c-ba829c158b95" class="">Ingrese numero 1: 7<p id="56f1368e-31b1-495e-b717-51cabe1da6b4" class="">Ingrese numero 2: 30</p><p id="e1267a16-a00e-4dfd-8f69-3d4d2fa5ff63" class="">El segundo numero es mayor</p></blockquote><blockquote id="fa40e63a-caec-4d96-a814-697dc597709b" class="">Ingrese numero 1: 45<p id="7964a701-5a97-4805-b1d8-fcec6b63fae4" class="">Ingrese numero 2: 10</p><p id="97223c31-f7c3-41da-a059-0de54c01b7d6" class="">El primer numero es mayor</p></blockquote><p id="302a9fce-2f75-44ed-b6d4-a919f15ae66b" class=""><strong>SOLUCION</strong></p><pre id="ea9503f7-8b6c-49e0-9c15-b184c1a91f8a" class="code code-wrap"><code>n1 = int(input(&quot;Ingrese primer numero:&quot;))
+n2 = int(input(&quot;Ingrese segundo numero:&quot;))
+
+if n1 &gt; n2:
+    print(&quot;El primer numero es mayor&quot;)
+else:
+    print(&quot;El segundo numero es mayor&quot;)
+</code></pre></li></ol><ol type="1" id="b53f44a6-bed6-4c0b-ba36-7e6a7cbbddd7" class="numbered-list" start="6"><li>Crear algoritmo que solicite el año de nacimiento al usuario para entregar su edad y decir si es mayor o menor de edad.<blockquote id="ae799975-04fc-497c-8a9b-0717a0cbff6b" class="">Ingrese año: 2000<p id="c96f4ac3-3053-4104-a3d8-e1c35f0a80fc" class="">Su edad es 23 años y es mayor de edad</p></blockquote><blockquote id="820ed76f-07cb-4b79-9b31-85bdd121065c" class="">Ingrese año: 2020<p id="9e6d733f-e256-4344-a5bd-0ff2ce1b80aa" class="">Su edad es 3 años y es menor de edad</p></blockquote><p id="61a61366-9e87-4708-915c-6e1c3038eb04" class=""><strong>SOLUCION</strong></p><pre id="a4073e76-da85-4c11-b87e-f6f77efdca55" class="code code-wrap"><code>nacimiento = int(input(&quot;Ingrese año de nacimiento:&quot;))
+
+edad = 2023 - nacimiento
+
+if edad &gt;= 18:
+    print(&quot;Usted tiene&quot;, edad, &quot;años y es mayor de edad&quot;)
+else:
+    print(&quot;Usted tiene&quot;, edad, &quot;años y es menor de edad&quot;)
+</code></pre></li></ol><ol type="1" id="8e3d4e1d-a717-41ba-9ccb-1a1fadc72f56" class="numbered-list" start="7"><li>Crear algoritmo que solicite la resolucion de una imagen y los clasifique segun su calidad.<table id="a2b25e5e-f2d8-4950-88a5-ddc763ec657c" class="simple-table"><tbody><tr id="92b4b022-3a29-42c7-bc81-a7ca06ce4e86"><td id="&gt;RGp" class="">Resolucion</td><td id="I}l_" class="">Calidad</td></tr><tr id="7d44f821-418d-4d71-a681-e406b84c3961"><td id="&gt;RGp" class="">&lt; 720</td><td id="I}l_" class="">SD</td></tr><tr id="a273df37-2d1d-4c5a-8951-3c56eee43c20"><td id="&gt;RGp" class="">720</td><td id="I}l_" class="">HD</td></tr><tr id="d040bb36-4b02-40b5-a738-0c6b0d0e5ccd"><td id="&gt;RGp" class="">1080</td><td id="I}l_" class="">Full HD</td></tr><tr id="8095f4ef-a4c9-477b-a781-523b7ce137a3"><td id="&gt;RGp" class="">2160</td><td id="I}l_" class="">Ultra HD</td></tr></tbody></table><blockquote id="9154ca2c-8761-44ad-ba02-728cf8604c65" class="">Ingrese resolucion: 1080<p id="b98eb0ce-bca2-45ba-b108-2a6ad3c914a5" class="">Calidad Full HD</p></blockquote><p id="0dd75dc6-908c-49f7-ba49-f73cb82e96a5" class=""><strong>SOLUCION</strong></p><pre id="b6b8f04c-6854-4d54-8b9b-a44678c91942" class="code code-wrap"><code>resolucion = int(input(&quot;Ingrese resolucion:&quot;))
+
+if resolucion &lt; 720:
+    print(&quot;Calidad SD&quot;)
+elif resolucion == 720:
+    print(&quot;Calidad HD&quot;)
+elif resolucion == 1080:
+    print(&quot;Calidad Full HD&quot;)
+elif resolucion == 2160:
+    print(&quot;Calidad Ultra HD&quot;)
+else:
+    print(&quot;Resolucion no clasificada&quot;)
+</code></pre></li></ol><h3 id="89a3494e-d057-4d22-8e1a-18f079a3bd22" class="">Ciclo <code>for</code></h3><p id="604794c5-3621-439e-9103-d3caaf276fdd" class="">Sirve para:</p><ul id="4139f045-e0fd-4905-8912-571c350043ad" class="bulleted-list"><li style="list-style-type:disc">Generar numeros entre un rango.</li></ul><ul id="ea764023-2634-4b68-a7c1-453afc1af2cb" class="bulleted-list"><li style="list-style-type:disc">Reptir código una determinada cantidad de veces.</li></ul><ul id="acb4f4b6-fa1d-4ec5-9b32-1fbba47865ac" class="bulleted-list"><li style="list-style-type:disc">Recorrer listas.</li></ul><p id="06be3342-4f41-4b9c-bfda-596abf217247" class=""><strong>SINTAXIS</strong>: Generando numeros entre un rango.</p><pre id="74de06c2-d72d-40ae-bee3-7bee0358df77" class="code code-wrap"><code>for i range(8):
+  #CODIGO
+  #CODIGO
+  #CODIGO
+</code></pre><h3 id="6b1d3447-daca-4da9-b4f7-f37df3ef9c13" class="">Formas de usar <code>range()</code></h3><ul id="84eaa3f5-03a8-4b65-b538-cb1366b12e9c" class="bulleted-list"><li style="list-style-type:disc"><code>range(21)</code>: Genera numeros de 0 a 20.</li></ul><ul id="eb066648-fd5b-4ba6-8184-a804cf866c9d" class="bulleted-list"><li style="list-style-type:disc"><code>range(8,21)</code>: Genera numeros desde 8 a 20.</li></ul><ul id="8e0df00d-2917-4656-ac07-048233c74bde" class="bulleted-list"><li style="list-style-type:disc"><code>range(8,21,2)</code>: Genera numeros entre 8 y 20 con incrementos de 2.</li></ul><h3 id="9fd1e9ec-2b98-4162-a905-699f9103df91" class="">Ejercicio</h3><ol type="1" id="5b24d287-23b1-4bb0-b207-599b89c1c10f" class="numbered-list" start="1"><li>Pedirle al usuario que ingrese el numero inferior y el superior para luego mostrar todos ellos por pantalla.</li></ol><h3 id="b12f8f07-d393-49f2-848a-2774a399bb8f" class="">Listas</h3><p id="42af9419-2a72-4c47-bfc7-eefb3b6abab7" class="">Son variables capaces de almacenar muchos valores en su interior.</p><p id="8a5c5fc9-4353-4816-9f0a-2e2b82b50df1" class=""><strong>SINTAXIS</strong></p><pre id="24f09411-7596-42bb-902e-b04909dbc7d8" class="code code-wrap"><code>edades = [21,18,19,25]
+
+print(edades)
+</code></pre><table id="88d9a177-ab80-4fd7-9688-cf445f809ee2" class="simple-table"><tbody><tr id="69be9136-6ade-4b3e-b6a8-703a4d8360de"><td id="UpwT" class=""><strong>0</strong></td><td id="R:Lo" class=""><strong>1</strong></td><td id="lNhO" class=""><strong>2</strong></td><td id="s@D=" class=""><strong>3</strong></td></tr><tr id="33cf3a67-fa58-49cf-bf0b-47792dc207b7"><td id="UpwT" class="">21</td><td id="R:Lo" class="">18</td><td id="lNhO" class="">19</td><td id="s@D=" class="">25</td></tr></tbody></table><h3 id="2c992538-7cf3-4f99-b896-99e05177d898" class="">Recorriendo una lista con ciclo <code>for</code></h3><pre id="afdb13f5-d874-48f4-b29b-bb2b9cdbdf77" class="code code-wrap"><code>edades = [21,18,&quot;hola&quot;,19,25]
+
+for i in edades:
+    print(i)
+</code></pre><h3 id="88fc1964-37c1-49a7-a1e6-c44fa487cf71" class="">Ejercicio</h3><ol type="1" id="8a0fc85b-09ee-4c7c-9193-c7b86cbd08a6" class="numbered-list" start="1"><li>Crear algoritmo que pregunte al usuario que tabla de multiplicar quiere mostrar y luego la muestre al usuario.
+<strong>SOLUCION</strong><pre id="38100663-6110-43ea-a045-ea766ee864fe" class="code code-wrap"><code>num = int(input(&quot;Ingrese numero:&quot;))
+
+for i in range(11):
+    print(num, &quot;x&quot;, i, &quot;=&quot;, num*i)</code></pre></li></ol><ol type="1" id="f1fa4b5c-6441-44d2-afd1-91133d1c9518" class="numbered-list" start="2"><li></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

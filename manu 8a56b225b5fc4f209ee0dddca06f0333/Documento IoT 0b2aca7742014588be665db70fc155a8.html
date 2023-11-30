@@ -1,0 +1,1209 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documento IoT</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0b2aca77-4201-4588-be66-5db70fc155a8" class="page sans"><header><img class="page-cover-image" src="https://kinsta.com/wp-content/uploads/2022/10/The-Internet-of-Things.jpg" style="object-position:center 40.16%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🛰️</span></div><h1 class="page-title">Documento IoT</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="90f56c26-6f6b-4344-a2c6-e3aa5455c79e"><div style="font-size:1.5em"><span class="icon">👨🏻‍💻</span></div><div style="width:100%"><strong>Docente:</strong> Manuel Cartes Henríquez</div></figure><nav id="80aeb202-c180-4685-980b-18e79baae519" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e1f73219-e54e-44ee-bdd3-5805bdc012b5">Introducción a IoT</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7d739d4c-61b2-4a76-9f12-bea0d3572816">¿Que significan las siglas IoT?</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#83a88ad0-587d-4202-a3a8-c0478913b413">Historia y evolución del IoT</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#175fbbea-efe1-4fd0-afc3-a8116a6a4945">Aplicaciones IoT</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#abeba5dc-833a-4475-8f02-a237a456531f">Sensores y actuadores</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#59b9a837-0d1d-42bb-bac4-cc40c0d617fc">Placas de desarrollo</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ef0656e2-8ea0-458f-88a0-87d9a3ebf40a">Conectividad y tecnología</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e9e300c6-e6da-40da-a522-ead39f034cfb">El famoso ESP32</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#712de94e-8f51-46b3-849d-2a73e3f81049">Kit de desarrollo IoT</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#774c6d2c-f56c-47ae-9da0-7da613cfd636">Paso 1</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#734a51a3-8955-4bcb-8ad5-99e85d66ca18">Paso 2</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f98be20e-1542-4e12-a1c3-85d1ed01f415">Paso 3</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7123456d-ff07-4473-a077-1a8a2c73f20c">Paso 4</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0fb6044a-84b1-4b5c-af3a-63e688b19ab5">Paso 5</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6165e2ae-eb0c-4a86-a399-cf94e8c1bcf8">Paso 6</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f4c86fd5-074a-4d7b-9164-8945faeb965b">Paso 7</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#95889a2e-aa6b-4812-8fe0-420adfb75239">Paso 8</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7b8f5c41-2e6f-4c89-9476-ece14c501463">Paso 9</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#68bb6237-bfe3-426c-aeb3-cfc608dbf397">Paso 10</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3a124cb4-e97e-41c4-9560-7be38a70f0dc">Paso 11</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d74b4e65-dff0-4511-953b-f2a87ecd8b01">Paso 12</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#deb15926-80a9-4653-aeca-3e2876a4065e">Paso 13</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e9267e27-1c95-4c60-a409-cf8786263ba0">Paso 14</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f5a4cf1e-8d3d-4437-960c-72c69d55992d">Paso 15</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#46958fdb-ce5e-4493-af62-741b478c82a5">Paso 16</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ce8919ad-ae5d-4091-9b79-2474c42ddec9">Paso 17</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#33c9de92-d7cc-4952-b390-3ede9db78468">Configuración</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f215a895-b26e-4613-9965-4ca2c0307902">Instalación del driver CH340</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6eb17eaf-1b23-45f1-80a0-ddf897a168f4">Configuración del IDE Arduino</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9942feb9-9d45-4f4c-8fd6-567f10bb829c">Cargando sketchs</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b8cf3e61-b2c5-40d3-b053-e0bd54d91e03">Sketchs</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3203fb78-b97a-43f1-920d-00e8924f983f">Sketch 1 - LED</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b098f90-2454-4fe9-980a-7c5dd920c6a0">Sketch 2 - Buzzer</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0d4937c0-721a-4355-9e0c-23b10a989e7d">Sketch 3 - Temperatura y humedad ambiente</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8903b987-35a1-472c-947f-f8fae1170920">Sketch 4 - Conexión con APP</a></div></nav><h1 id="e1f73219-e54e-44ee-bdd3-5805bdc012b5" class="">Introducción a IoT</h1><h2 id="7d739d4c-61b2-4a76-9f12-bea0d3572816" class="">¿Que significan las siglas IoT?</h2><p id="67a4a945-3b5c-416a-aaab-3966e1db1a9e" class="">El Internet de las cosas (IoT, por sus siglas en inglés, Internet of Things) se refiere a la conexión de dispositivos físicos a través de internet, permitiéndoles recopilar y compartir datos. Estos dispositivos pueden ser objetos cotidianos, como electrodomésticos, vehículos, dispositivos de salud, sistemas de gestión de energía, entre otros. La idea central es que estos dispositivos pueden recopilar y intercambiar información de manera autónoma, lo que facilita la automatización, la toma de decisiones inteligentes y la mejora de la eficiencia en diversas aplicaciones.</p><p id="4bc05372-86ab-45ca-b074-099a09ef194c" class="">En un contexto de IoT, los dispositivos están equipados con sensores, actuadores y conectividad a internet, lo que les permite recopilar datos del entorno y realizar acciones en función de esa información. Estos datos pueden ser recopilados, analizados y utilizados para tomar decisiones informadas, optimizar procesos y mejorar la interacción entre humanos y máquinas.</p><p id="04c30fdd-48f2-4a0f-ab96-352740ac41ba" class="">El IoT tiene aplicaciones en una variedad de sectores, como la salud, la agricultura, la industria, el transporte, la domótica y muchos otros. La creciente interconexión de dispositivos a través de IoT está transformando la forma en que vivimos y trabajamos, brindando nuevas oportunidades y desafíos en términos de seguridad, privacidad y gestión de grandes volúmenes de datos.</p><h2 id="83a88ad0-587d-4202-a3a8-c0478913b413" class="">Historia y evolución del IoT</h2><p id="5020733e-f719-4486-983e-4886744ad59e" class="">La historia y la evolución del Internet de las cosas (IoT) se remontan a varias décadas, y su desarrollo ha estado influenciado por avances tecnológicos en diversas áreas. A continuación, se proporciona un resumen de los hitos más destacados en la historia del IoT:</p><ol type="1" id="4943ca8c-3cec-458a-aa7f-e57253d69ed7" class="numbered-list" start="1"><li><strong>Década de 1970:</strong><ul id="9965d50c-8700-46e6-8057-e138eeb8a689" class="bulleted-list"><li style="list-style-type:disc">Los primeros indicios de dispositivos conectados surgieron con la invención de las primeras máquinas expendedoras conectadas a la red para monitorear los niveles de inventario y enviar alertas.</li></ul></li></ol><ol type="1" id="4f966f12-56ad-49b7-b494-068bf1fb18d1" class="numbered-list" start="2"><li><strong>Década de 1980:</strong><ul id="dce4825c-1e51-4697-930a-fa12e5536818" class="bulleted-list"><li style="list-style-type:disc">Surgieron sistemas de identificación por radiofrecuencia (RFID) para rastrear y gestionar inventarios.</li></ul></li></ol><ol type="1" id="addbcfec-352d-47ff-a61f-463d12d039e7" class="numbered-list" start="3"><li><strong>Década de 1990:</strong><ul id="9040dd11-6e63-4970-94a4-ccc05e46ee40" class="bulleted-list"><li style="list-style-type:disc">El término &quot;Internet de las cosas&quot; fue acuñado por Kevin Ashton en 1999 mientras trabajaba en Procter &amp; Gamble. Se refería a la idea de etiquetar y rastrear productos a través de la web.</li></ul><ul id="e72bf21a-6c97-49e8-bd2f-bb7f3c4f45e4" class="bulleted-list"><li style="list-style-type:disc">Avances en tecnologías de redes y protocolos de comunicación contribuyeron al crecimiento potencial del IoT.</li></ul></li></ol><ol type="1" id="b5153470-1db0-46d4-aa13-ccc446865a28" class="numbered-list" start="4"><li><strong>Principios de los años 2000:</strong><ul id="df47a2d3-77c6-476b-92ce-a80e60765068" class="bulleted-list"><li style="list-style-type:disc">Se desarrollaron estándares de comunicación, que facilitaron la conexión de dispositivos a la red.</li></ul><ul id="1be45c94-f200-464a-a564-9556990fa326" class="bulleted-list"><li style="list-style-type:disc">La miniaturización de sensores y la reducción de costos permitieron la proliferación de dispositivos conectados.</li></ul></li></ol><ol type="1" id="95f08302-9031-4b6f-98b9-991155967b2a" class="numbered-list" start="5"><li><strong>Mediados de los años 2000:</strong><ul id="dd0562ba-cfb9-440d-8a4a-3c36ceea6a42" class="bulleted-list"><li style="list-style-type:disc">Se produjo la popularización de las plataformas de desarrollo de hardware, como Arduino y Raspberry Pi, que facilitaron la creación de prototipos de dispositivos IoT.</li></ul></li></ol><ol type="1" id="a5f42a87-9a65-4baa-a18a-c2cbc9219327" class="numbered-list" start="6"><li><strong>2010 en adelante:</strong><ul id="fb753ba4-99c1-422f-88ba-1d4722ff5a58" class="bulleted-list"><li style="list-style-type:disc">El IoT experimentó un rápido crecimiento con el aumento de la conectividad a través de la banda ancha y la adopción generalizada de dispositivos móviles.</li></ul><ul id="39e5bebe-b8ae-4b71-a44f-95ca2b308f47" class="bulleted-list"><li style="list-style-type:disc">Grandes empresas de tecnología, como IBM, Microsoft, y Google, invirtieron en soluciones y plataformas de IoT.</li></ul><ul id="4272a1b0-8ab7-45c0-bae7-f976874151dd" class="bulleted-list"><li style="list-style-type:disc">Surgieron estándares de IoT, como MQTT, para facilitar la comunicación entre dispositivos.</li></ul></li></ol><ol type="1" id="44d5b9a4-998a-40b4-9f28-6e45f0fff4b8" class="numbered-list" start="7"><li><strong>Actualidad:</strong><ul id="5f14fbb8-6390-43f8-a1b5-8503cfa8a980" class="bulleted-list"><li style="list-style-type:disc">El IoT se ha expandido a una amplia gama de sectores, incluidos la salud, la agricultura, la industria, el transporte y la domótica.</li></ul><ul id="9b6fdc17-c9a1-486d-befe-8bcd69773b1a" class="bulleted-list"><li style="list-style-type:disc">La integración de la inteligencia artificial y el machine learning ha mejorado la capacidad de los dispositivos IoT para procesar y analizar datos.</li></ul><ul id="447c4d0b-d248-48ac-8d57-92698c9d0643" class="bulleted-list"><li style="list-style-type:disc">La seguridad y la privacidad en el IoT son áreas de creciente preocupación, y se están desarrollando medidas para abordar estos desafíos.</li></ul></li></ol><p id="db4fe3cc-477d-4edb-9daa-ad7c2ae05c55" class="">
+</p><h2 id="175fbbea-efe1-4fd0-afc3-a8116a6a4945" class="">Aplicaciones IoT</h2><p id="e58daccd-4c22-4b08-afc2-902309335df7" class="">El Internet de las cosas tiene aplicaciones en una amplia variedad de sectores, mejorando la eficiencia, la comodidad y la toma de decisiones en diversos contextos.</p><p id="6c4f2dba-c00f-4dd7-8ef1-b72c1c86b260" class=""><strong>Domótica (Smart Homes):</strong></p><ul id="8a2289b5-fc67-4595-9a63-b6c1cba77f2f" class="bulleted-list"><li style="list-style-type:disc">Control de luces, termostatos, cámaras de seguridad y electrodomésticos a través de dispositivos conectados.</li></ul><ul id="e72337ae-774a-44b8-80d8-2f1207042002" class="bulleted-list"><li style="list-style-type:disc">Sistemas de seguridad inteligente que pueden enviar alertas y permitir la monitorización remota.</li></ul><figure id="afa78e59-6aa1-4ec7-977a-8b257ddf60f4" class="image" style="text-align:center"><a href="https://tadviser.com/images/a/a4/Aqara_Hub_1.png"><img style="width:528px" src="https://tadviser.com/images/a/a4/Aqara_Hub_1.png"/></a><figcaption>Hub y dispositivos domóticos</figcaption></figure><p id="4615158e-7b1f-47b4-af33-d95dcc18550c" class=""><strong>Salud Conectada:</strong></p><ul id="754cd609-9783-482e-9305-1463fe12bb8e" class="bulleted-list"><li style="list-style-type:disc">Dispositivos de monitoreo de salud, como pulseras y relojes inteligentes, que registran la actividad física, la frecuencia cardíaca y otros parámetros.</li></ul><ul id="c1bac102-0410-4359-b008-ee371a2cb8eb" class="bulleted-list"><li style="list-style-type:disc">Equipos médicos conectados para monitoreo remoto y gestión de enfermedades crónicas.</li></ul><figure id="7d9e658f-48bf-4372-9f75-fdeeb92ee638" class="image"><a href="https://www.revistaneo.com/sites/default/files/inline-images/shutterstock_727368211%282%29.jpg"><img style="width:528px" src="https://www.revistaneo.com/sites/default/files/inline-images/shutterstock_727368211%282%29.jpg"/></a><figcaption>Telemedicina</figcaption></figure><p id="ec8ac2ff-e754-4ee7-9912-91f0b7614e85" class=""><strong>Agricultura Inteligente (AgTech):</strong><div class="indented"><ul id="b8cd7fa8-44d3-4dbd-9421-51e2a7d07146" class="bulleted-list"><li style="list-style-type:disc">Sensores en el campo que recopilan datos sobre suelo, clima y cultivos.</li></ul><ul id="7c840fb8-802d-4d63-a2c0-991d46a053fd" class="bulleted-list"><li style="list-style-type:disc">Sistemas de riego automatizado basados en la información recopilada por sensores.</li></ul></div></p><figure id="cd5cdc50-e4aa-4946-b6ae-855bc646e58f" class="image"><a href="https://orbesagricolasac.com/wp-content/uploads/2017/05/automatizacion.jpg"><img style="width:528px" src="https://orbesagricolasac.com/wp-content/uploads/2017/05/automatizacion.jpg"/></a><figcaption>Riego automatizado</figcaption></figure><p id="8357cbf7-e532-4c00-afdc-f2ccf16b199e" class=""><strong>Ciudades Inteligentes:</strong><div class="indented"><ul id="29ca80a1-5533-485a-b1c2-dfe6154f8de2" class="bulleted-list"><li style="list-style-type:disc">Gestión del tráfico mediante sensores y cámaras.</li></ul><ul id="d9073a6f-764b-40f7-b9b5-2d9bd37252d5" class="bulleted-list"><li style="list-style-type:disc">Recolección de datos para la planificación urbana, como la monitorización de la calidad del aire y la gestión de residuos.</li></ul></div></p><figure id="c3e0ca15-3d41-48f5-baaf-f73fd97edcf9" class="image"><a href="https://canteradeempresas.com/wp-content/uploads/2019/12/smart-cities-infrastructure-iot-wide.jpg"><img style="width:528px" src="https://canteradeempresas.com/wp-content/uploads/2019/12/smart-cities-infrastructure-iot-wide.jpg"/></a><figcaption>Esquema smart city</figcaption></figure><p id="653ad101-45ff-4d9c-b583-eeaea9b30062" class=""><strong>Industria 4.0:</strong><div class="indented"><ul id="17bb6666-07c8-4fff-b8fa-c461f52574e6" class="bulleted-list"><li style="list-style-type:disc">Monitorización y mantenimiento predictivo de maquinaria industrial.</li></ul><ul id="ec24cb72-78e4-417d-bb87-6d4f0f546c3b" class="bulleted-list"><li style="list-style-type:disc">Logística y gestión de la cadena de suministro mediante sensores y seguimiento en tiempo real.</li></ul></div></p><figure id="54746383-e86d-4bab-9eb7-1306bfd9f3d0" class="image"><a href="https://upload.wikimedia.org/wikipedia/commons/c/c8/Industry_4.0.png"><img style="width:576px" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Industry_4.0.png"/></a><figcaption>Versiones de la industria</figcaption></figure><p id="b25d50c2-af46-436c-b3e1-c12779f41418" class=""><strong>Vehículos Conectados:</strong><div class="indented"><ul id="07423d25-eab7-4022-a3d3-868ad772a5ad" class="bulleted-list"><li style="list-style-type:disc">Sistemas de navegación inteligente y asistentes de conducción.</li></ul><ul id="423ba86d-629f-4709-a62a-afcd08aff7a5" class="bulleted-list"><li style="list-style-type:disc">Monitoreo remoto de vehículos y gestión de flotas.</li></ul></div></p><figure id="e6b9e412-d35f-43ee-ae23-e298485e262d" class="image"><a href="https://uss.com.ar/corporativo/wp-content/uploads/2018/08/gps-para-flotas.jpg"><img style="width:576px" src="https://uss.com.ar/corporativo/wp-content/uploads/2018/08/gps-para-flotas.jpg"/></a><figcaption>Vehículos monitorizados por GPS</figcaption></figure><p id="427056a6-9e97-4888-8827-83be2c91a990" class=""><strong>Energía Inteligente:</strong><div class="indented"><ul id="07d4b881-b701-46c6-986a-86f9331c3b9c" class="bulleted-list"><li style="list-style-type:disc">Medidores inteligentes para monitorizar y gestionar el consumo de energía.</li></ul><ul id="ca6efbd6-5c0a-4e38-85e1-57454cbc5d8a" class="bulleted-list"><li style="list-style-type:disc">Sistemas de gestión de energía en el hogar y en entornos empresariales.</li></ul><figure id="1e837dcd-4f68-4d75-88f3-faefef53b736" class="image" style="text-align:center"><a href="https://dysonenergyservices.co.uk/wp-content/uploads/2023/03/smart-meters-solar-energy1.jpg"><img style="width:576px" src="https://dysonenergyservices.co.uk/wp-content/uploads/2023/03/smart-meters-solar-energy1.jpg"/></a><figcaption>UI medidor inteligente</figcaption></figure></div></p><p id="a49870f7-adbd-4ace-a1e5-17e6cf329868" class=""><strong>Retail (Comercio Minorista) Inteligente:</strong><div class="indented"><ul id="6ad0e1f1-9761-4d07-8c68-3d65b3adc136" class="bulleted-list"><li style="list-style-type:disc">Etiquetas RFID para el seguimiento de inventario.</li></ul></div></p><figure id="b5180c6c-23eb-4517-b3aa-54b382f1a25f" class="image"><a href="https://www.nedap-retail.com/app/uploads/2021/02/iD-Cloud_Zebra_Start.jpg"><img style="width:576px" src="https://www.nedap-retail.com/app/uploads/2021/02/iD-Cloud_Zebra_Start.jpg"/></a><figcaption>RFID en retail</figcaption></figure><p id="29cde871-cca8-4170-9119-b605fda09799" class=""><strong>Wearables y Fitness:</strong><div class="indented"><ul id="f86d499b-ef2e-4628-9d62-3d8dd1c56f66" class="bulleted-list"><li style="list-style-type:disc">Dispositivos de fitness conectados que monitorizan la actividad física y la salud.</li></ul><ul id="88fb2969-baf1-4135-9b44-e1580cb844a8" class="bulleted-list"><li style="list-style-type:disc">Integración de datos de wearables con aplicaciones de salud y bienestar.</li></ul></div></p><figure id="074872a0-04ca-4bda-8560-48bcdeb57be4" class="image"><a href="https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/wearables.jpg"><img style="width:576px" src="https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/wearables.jpg"/></a><figcaption>Smartwatch y Smartphone</figcaption></figure><p id="2c5a33c0-2b65-46c2-aff2-f362ad4c61ef" class=""><strong>Gestión Ambiental:</strong><div class="indented"><ul id="5623402d-582d-4101-8966-8eeb8a43e020" class="bulleted-list"><li style="list-style-type:disc">Sensores para el monitoreo de la calidad del aire y del agua.</li></ul><ul id="6fa90575-e750-48f5-bec8-fde242732a4f" class="bulleted-list"><li style="list-style-type:disc">Sistemas de alerta temprana para eventos climáticos extremos.</li></ul></div></p><figure id="7292a1e1-5f06-49d0-bae2-cd6a1dad383c" class="image"><a href="https://www.lab-ferrer.com/wp-content/uploads/parametros-ambientales.jpg"><img style="width:576px" src="https://www.lab-ferrer.com/wp-content/uploads/parametros-ambientales.jpg"/></a><figcaption>Sensores ambientales</figcaption></figure><h2 id="abeba5dc-833a-4475-8f02-a237a456531f" class="">Sensores y actuadores</h2><p id="b0cc1cc3-f3c1-4c65-8c68-a86cc491f170" class=""><strong>La base del Internet de las Cosas</strong></p><p id="7e2f8e52-8239-4a2c-8667-1f9a88762c95" class="">El Internet de las Cosas ha emergido como una revolución tecnológica que conecta el mundo físico con el virtual, permitiendo la interacción entre dispositivos y sistemas de manera más inteligente y eficiente. En el corazón de esta transformación se encuentran los <strong>sensores</strong> y <strong>actuadores</strong>, componentes esenciales que habilitan la recopilación de datos y la ejecución de acciones en el entorno físico.</p><p id="c72f1f74-fe28-434d-9324-b6f9a006b21c" class="">Los <strong>sensores</strong> son dispositivos que detectan y convierten información física del entorno en señales eléctricas. Su diversidad abarca desde simples termómetros hasta complejos sensores de imagen y sensores biométricos. La clave de su importancia radica en su capacidad para proporcionar datos en tiempo real sobre variables como temperatura, humedad, luz, movimiento y más. En el contexto del IoT, los sensores sirven como los ojos y oídos digitales del mundo físico, permitiendo la monitorización continua de variables críticas.</p><figure id="ca1ec811-61fd-41ba-99bf-36a37fd976a6" class="image"><a href="https://www.taloselectronics.com/cdn/shop/products/kit_de_16_sensores_para_arduino_y_raspberry_mexico_jalisco_guadalajara_1252x1252.png?v=1593814929"><img style="width:480px" src="https://www.taloselectronics.com/cdn/shop/products/kit_de_16_sensores_para_arduino_y_raspberry_mexico_jalisco_guadalajara_1252x1252.png?v=1593814929"/></a><figcaption>Sensores para placas de desarrollo</figcaption></figure><p id="cc1f9d46-638e-4486-b8b8-d383e8044cc2" class="">Por otro lado, los <strong>actuadores</strong> son dispositivos que ejecutan acciones en respuesta a señales eléctricas o comandos. Pueden variar desde motores y válvulas hasta dispositivos más sofisticados como brazos robóticos. La función fundamental de los actuadores en el contexto del IoT es transformar datos y decisiones digitales en cambios físicos en el entorno. Por ejemplo, un actuador en un sistema de domótica puede cerrar cortinas automáticamente en respuesta a la información de un sensor de luz ambiental.</p><figure id="8a2c73e2-fd9c-4671-91f2-a0f891fcc1ec" class="image"><a href="https://roboticoss.com/wp-content/uploads/2023/04/Actuadores-para-robotica-1.webp"><img style="width:528px" src="https://roboticoss.com/wp-content/uploads/2023/04/Actuadores-para-robotica-1.webp"/></a><figcaption>Actuadores tipo motor</figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b92b8631-9753-4031-9f33-9c9e2072022a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Los actuadores son quienes ejercen una acción de control sobre un proceso.</div></figure><p id="61c4292a-b0f0-4149-8ed9-1bb7dcd2ad0b" class="">La convergencia efectiva de sensores y actuadores en el IoT permite la creación de sistemas autónomos y reactivos. En la gestión del tráfico urbano, los sensores monitorean el flujo vehicular, y los actuadores controlan las luces del semáforo para optimizar el flujo. En la fabricación, sensores detectan anomalías en el proceso, y los actuadores realizan ajustes instantáneos para mantener la calidad del producto.</p><p id="b0ac3ac1-77fb-43cc-b6a3-790582aefdf6" class="">A pesar de los beneficios evidentes, el despliegue masivo de sensores y actuadores también plantea desafíos, especialmente en áreas de seguridad y privacidad. La recopilación y transmisión de datos constantes requiere una atención cuidadosa para garantizar la protección de la información sensible y prevenir posibles vulnerabilidades.</p><h2 id="59b9a837-0d1d-42bb-bac4-cc40c0d617fc" class="">Placas de desarrollo</h2><p id="30fbf6e6-612c-4175-8f02-6b36f6c2e730" class="">Una placa de desarrollo es una plataforma de hardware que incluye componentes esenciales, como un procesador, memoria, puertos de entrada/salida y, a menudo, conectividad a redes, todo empaquetado en una forma compacta y fácil de usar. Uno de los ejemplos más emblemáticos es Arduino, que ha cautivado a una audiencia global con su simplicidad y versatilidad. Raspberry Pi, otra figura destacada, ha llevado la potencia de cómputo completa a dimensiones reducidas, permitiendo a los usuarios crear desde simples proyectos educativos hasta soluciones de servidores ligeros.</p><div id="2c5a54ee-faad-4ee5-9712-b0bf558cfa3e" class="column-list"><div id="2fff72f9-5be6-4fad-ba28-81199488e088" style="width:50%" class="column"><figure id="4daa564a-12c8-4fa3-ac9a-7e159a0a7ed6" class="image" style="text-align:center"><a href="https://raspberrypi.cl/wp-content/uploads/2019/09/MCI06111A.webp"><img src="https://raspberrypi.cl/wp-content/uploads/2019/09/MCI06111A.webp"/></a><figcaption>Raspberry Pi</figcaption></figure></div><div id="120401e5-b770-4012-aa43-580b9074c83e" style="width:50%" class="column"><p id="560a188e-9d08-470c-8f7c-bc25d97fefed" class=""> </p><p id="c3d31529-1fe4-4458-911e-2e2224b4dc85" class="">
+</p><p id="924cc88e-e9e7-4275-ac4c-782a22235c03" class=""> </p><figure id="09a120d3-6a76-430c-aba8-a46352940a93" class="image" style="text-align:center"><a href="https://i.blogs.es/90d0d7/arduinounosmd450px/1366_2000.jpg"><img src="https://i.blogs.es/90d0d7/arduinounosmd450px/1366_2000.jpg"/></a><figcaption>Arduino</figcaption></figure></div></div><p id="8bd71f7e-eb3e-4c1d-8771-fa47890812aa" class="">Las placas de desarrollo han alterado el paradigma tradicional del desarrollo de hardware, abriendo las puertas a la creatividad y la experimentación. Su contribución se manifiesta en diversas áreas, desde la educación hasta la investigación y el desarrollo comercial. En entornos educativos, estas plataformas ofrecen una introducción práctica a los principios de la electrónica y la programación, estimulando la curiosidad y fomentando el aprendizaje activo.</p><p id="990d0a5a-2ceb-464a-bef6-ca0d5482a649" class="">En el ámbito de la investigación, las placas de desarrollo sirven como bancos de pruebas ideales para prototipos rápidos y experimentación rápida. Investigadores y desarrolladores pueden llevar a cabo pruebas de concepto sin la necesidad de costosos equipos personalizados, acelerando el ciclo de desarrollo y permitiendo la exploración de nuevas ideas con mayor agilidad.</p><p id="5ec52bd1-71c4-49d0-859b-b68cf6718af4" class="">Desde el punto de vista comercial, el auge de las placas de desarrollo ha facilitado la incubación de nuevas empresas y la materialización de productos innovadores. Empresas emergentes pueden utilizar estas plataformas para crear prototipos de productos y demostrar la viabilidad de sus ideas a inversores y clientes potenciales antes de comprometerse con grandes inversiones en la fabricación.</p><p id="818725c5-2660-4e10-aa58-d5978db955a9" class="">Un aspecto crucial de las placas de desarrollo es su carácter de código abierto y la rica comunidad que las respalda. Los entusiastas y desarrolladores de todo el mundo comparten conocimientos, códigos y proyectos, creando un ecosistema colaborativo que potencia la creatividad colectiva. Esto no solo impulsa el desarrollo de hardware, sino que también nutre la evolución continua de las tecnologías relacionadas.</p><h2 id="ef0656e2-8ea0-458f-88a0-87d9a3ebf40a" class="">Conectividad y tecnología</h2><p id="b5e00739-c93f-4f21-885a-08b32f01fa68" class="">En la era digital actual, la conectividad se ha convertido en el tejido que une y capacita la vasta red de dispositivos que pueblan nuestro mundo interconectado. Tecnologías como <strong>WiFi</strong>, <strong>Bluetooth</strong> y <strong>Zigbee</strong>, entre otras, desempeñan roles fundamentales al posibilitar la comunicación sin fisuras entre dispositivos, desde los más pequeños y portátiles hasta los sistemas más complejos en la Internet de las Cosas (IoT). </p><p id="320b9fd1-e3c2-4931-a2af-99c979cb45af" class="">
+</p><p id="ec2d45d5-15bc-48df-bb8d-8231b65cc599" class=""><strong>Tecnologías inalámbricas</strong></p><figure id="72e91403-2bbf-4a92-acd0-a70eb3314dbb" class="image"><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WiFi_Logo.svg/1600px-WiFi_Logo.svg.png"><img style="width:108px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WiFi_Logo.svg/1600px-WiFi_Logo.svg.png"/></a></figure><p id="29bf56a2-9829-46fc-9f47-3ab300ae08e1" class=""><strong>WiFi</strong>, una de las tecnologías más ubicuas, ha transformado la forma en que accedemos y compartimos información. Desde la comodidad de nuestros hogares hasta espacios públicos, la conectividad inalámbrica ha liberado a los dispositivos de las ataduras de los cables, permitiendo una movilidad sin precedentes. La velocidad y la fiabilidad de las redes WiFi han propiciado un aumento exponencial en el intercambio de datos, desde la transmisión de medios hasta la colaboración en tiempo real, facilitando la vida moderna y empoderando nuevas formas de trabajo y comunicación.</p><figure id="1d2b571b-90d3-4f8d-893e-ef1344beb91b" class="image"><a href="https://9to5mac.com/wp-content/uploads/sites/6/2017/02/bluetooth-logo-e1546276877986.png?w=1600"><img style="width:192px" src="https://9to5mac.com/wp-content/uploads/sites/6/2017/02/bluetooth-logo-e1546276877986.png?w=1600"/></a></figure><p id="f6b6635e-1bd7-44e6-ad3c-42e56eed5c98" class=""><strong>Bluetooth</strong>, por otro lado, se ha consolidado como la columna vertebral de la conectividad de dispositivos personales. Auriculares inalámbricos, altavoces, teclados y una multitud de dispositivos periféricos utilizan Bluetooth para establecer conexiones confiables y eficientes. La capacidad de emparejamiento sencillo y el bajo consumo de energía han convertido a Bluetooth en un estándar para la comunicación inalámbrica en el ámbito personal.</p><figure id="611debee-7af9-49b2-9592-dc032c970fc5" class="image"><a href="https://i.blogs.es/69f111/zigbee/1366_2000.jpg"><img style="width:240px" src="https://i.blogs.es/69f111/zigbee/1366_2000.jpg"/></a></figure><p id="883a29ee-b053-440a-88c2-464734cde375" class="">En el ámbito de la <strong>Internet de las Cosas (IoT)</strong>, donde la conexión de dispositivos se expande más allá de los límites tradicionales, <strong>Zigbee</strong> ha emergido como una tecnología clave. Diseñada para el bajo consumo de energía y la comunicación eficiente entre dispositivos, Zigbee encuentra aplicaciones en la automatización del hogar, la monitorización industrial y otros escenarios donde la eficiencia energética y la confiabilidad son fundamentales. Su estructura de malla permite la creación de redes robustas y adaptables, lo que es esencial en entornos dinámicos y en constante cambio.</p><p id="ef2875f4-87e8-413f-953d-3afe98b60821" class="">La conectividad, sin embargo, no se limita solo a estas tecnologías. El despliegue de la <strong>5G</strong>, la quinta generación de redes móviles, está dando forma a un futuro donde la conectividad ultrarrápida y la baja latencia serán la norma. Esto no solo mejorará la experiencia del usuario en términos de velocidad de descarga, sino que también abrirá las puertas a nuevas aplicaciones, desde la realidad aumentada hasta la conducción autónoma.</p><h2 id="e9e300c6-e6da-40da-a522-ead39f034cfb" class="">El famoso ESP32</h2><p id="97b3c350-5f34-48b1-a54c-610250023206" class=""><strong>La Revolución inalámbrica en desarrollo IoT</strong></p><p id="c7af425f-8b5c-4f69-88c8-0372f3ec553f" class="">En el escenario del desarrollo de la Internet de las Cosas, el <strong>ESP32</strong> ha surgido como una potente herramienta, una verdadera joya para los innovadores y desarrolladores que buscan llevar a cabo proyectos inalámbricos sofisticados y eficientes. Desarrollado por Espressif Systems, el ESP32 ha redefinido las posibilidades de conectividad, combinando versatilidad, rendimiento y eficiencia energética en una pequeña placa de desarrollo.</p><p id="9075f7f7-b0cd-45f5-9e84-9257c1dd2b65" class="">En el corazón del atractivo del ESP32 está su capacidad para proporcionar conectividad <strong>WiFi</strong> y <strong>Bluetooth</strong> en un solo chip. Este logro no solo simplifica la integración de estas tecnologías en proyectos, sino que también amplía el alcance de aplicaciones potenciales. Ya sea controlando dispositivos domésticos inteligentes a través de WiFi o estableciendo comunicación inalámbrica entre dispositivos periféricos mediante Bluetooth, el ESP32 se presenta como una solución integral.</p><figure id="8047548d-acf5-4ff8-bbdb-fc779fb1a61a" class="image"><a href="https://mcielectronics.cl/wp-content/uploads/2022/04/product_template_29541.png"><img style="width:192px" src="https://mcielectronics.cl/wp-content/uploads/2022/04/product_template_29541.png"/></a><figcaption>Placa de desarrollo ESP32</figcaption></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3f209bc4-2301-418c-9ec9-c1ffdbe33682"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">El ESP32 puede venir en varias presentaciones y tamaño. En el mercado existen muchas variedades pero el chip sigue siendo el mismo</div></figure><p id="c3dbc7f8-7849-466a-ab2b-879490211b76" class="">La arquitectura del ESP32, con su procesador de doble núcleo y capacidad de procesamiento de señales digitales, ofrece un rendimiento impresionante para una placa de su tamaño. Esto es especialmente valioso en proyectos que requieren cálculos intensivos, como procesamiento de señales, reconocimiento de voz o aplicaciones de aprendizaje automático. La capacidad de ejecutar múltiples tareas simultáneamente sin comprometer el rendimiento ha convertido al ESP32 en una opción preferida para proyectos exigentes.</p><p id="31ac1197-c28b-472d-9e8b-6fadab76d780" class="">En el ámbito del bajo consumo de energía, una característica crucial para muchos dispositivos IoT, el ESP32 brilla con su capacidad de operar en modos de bajo consumo sin sacrificar la funcionalidad. El modo de suspensión profunda y las opciones de gestión de energía permiten a los desarrolladores optimizar el consumo de energía según los requisitos específicos de sus proyectos, lo que es vital para aplicaciones alimentadas por batería.</p><p id="d31861e9-eda6-46fe-9bf8-65ce355a8cb3" class="">La comunidad activa y colaborativa que rodea al ESP32 también ha contribuido significativamente a su éxito. La documentación exhaustiva, las bibliotecas en constante expansión y la participación activa en foros y comunidades en línea han creado un ecosistema que facilita el aprendizaje y el desarrollo. Esto ha atraído a una gama diversa de usuarios, desde estudiantes y aficionados hasta profesionales de la industria, fomentando la creatividad y la innovación.</p><h1 id="712de94e-8f51-46b3-849d-2a73e3f81049" class="">Kit de desarrollo IoT</h1><h2 id="774c6d2c-f56c-47ae-9da0-7da613cfd636" class="">Paso 1</h2><p id="8c2d64ff-5e19-471b-b18b-9ffde0790aec" class=""><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></p><figure id="a6bd74c7-f76f-4a80-a974-df91c6299052" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled.png"/></a></figure><p id="bf7e2bfc-430d-43a6-a2d1-892689168c56" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="f6536296-b141-49dc-98a1-cf620365c148" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%201.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%201.png"/></a></figure><p id="244ce25b-385a-4ac2-9389-38b184a020bc" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="7400d2ad-681b-424e-9789-6ff001e5beac" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%202.png"><img style="width:336px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%202.png"/></a></figure><hr id="3d8010fe-a322-43bf-9dec-e1ba1936f1cf"/><h2 id="734a51a3-8955-4bcb-8ad5-99e85d66ca18" class="">Paso 2</h2><p id="80018209-a1d7-428b-a9bc-82d6a5ee818f" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="1490ea02-0bff-4e0a-9a90-e50858e7f360" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%203.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%203.png"/></a></figure><p id="aa4430e8-4689-4e24-8aab-58fc49d710fa" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="df104336-5c0d-4ff1-aa9e-83f04bda0dc7" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%204.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%204.png"/></a></figure><p id="fd4a48ad-6c5e-4aed-9e3c-8272ea1c8717" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="96de8ca7-f933-4559-87b9-194f7e2c3541" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%205.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%205.png"/></a></figure><hr id="225f08ca-de2c-4cf9-82c9-4df2a9478b6c"/><h2 id="f98be20e-1542-4e12-a1c3-85d1ed01f415" class="">Paso 3</h2><p id="37af9d2c-cd1d-4092-ad2a-d87bce397f97" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="e6115a99-a776-4ad0-aa5d-cdab8a856cae" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%206.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%206.png"/></a></figure><p id="eec40e7f-ab98-49a2-a3dd-64247e5d4404" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="87d75da8-92af-4cd8-a95d-d070e382bd7c" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%207.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%207.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dc7e1dd6-0fff-41db-acb2-4721175d34c3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Dejar los cables del portapila hacia abajo.</div></figure><p id="de3dcf24-b833-4d2e-8507-6867f59384f6" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="3e6b77ce-e3f1-4c73-991d-a3dd7c71ece5" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%208.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%208.png"/></a></figure><hr id="12323ab6-f0d7-40bd-b9fe-91a6b679a392"/><h2 id="7123456d-ff07-4473-a077-1a8a2c73f20c" class="">Paso 4</h2><p id="aaac62b6-0171-4b83-a365-55e8c3c681f0" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="338e1c25-ad7c-418b-ba9e-d5a8ce6a04e1" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%209.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%209.png"/></a></figure><p id="5c42bc9b-8c55-4125-b1f6-464e57faaa21" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="4b6b6414-caad-4886-8fda-7484e2809000" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2010.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2010.png"/></a></figure><p id="bfa09916-c57f-46ad-a037-069a5ca8f159" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="8a13b6d0-351c-4bfd-bec6-9447d9da8435" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2011.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2011.png"/></a></figure><hr id="618e70d8-b86a-4502-a044-91c8c20f82f2"/><h2 id="0fb6044a-84b1-4b5c-af3a-63e688b19ab5" class="">Paso 5</h2><p id="2503481a-8c01-4dcf-ab71-0ca08c5a5df1" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="894051aa-ad92-454e-9284-df2bdeba5303" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2012.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2012.png"/></a></figure><p id="7650f911-93d5-44ad-8d84-f0db9bf5d751" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="631798c2-11f8-45b8-b372-3f0fb4321309" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2013.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2013.png"/></a></figure><p id="ea28b698-0bfd-401a-90c1-08ac03babc28" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="6a18cc0f-eac6-4ebe-b91c-f98b7b3e7039" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2014.png"><img style="width:288px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2014.png"/></a></figure><hr id="05b7ae0f-da07-4e3a-bfaa-9b09ddf06265"/><h2 id="6165e2ae-eb0c-4a86-a399-cf94e8c1bcf8" class="">Paso 6</h2><p id="e98d7480-ebda-4275-94aa-b0dddd8fc259" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="68405eb0-e89a-495d-b517-357ec24111a5" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2015.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2015.png"/></a></figure><p id="35bf8c48-1a2a-43b1-bc3c-1151c1bd637f" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="1f421d1a-6c98-44d9-9983-8cbe18b8e990" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2016.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2016.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b45c9f6-93cd-441f-a399-0373981ba387"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">No apretar demasiado los pernos pues se necesita que esta pieza sea móvil.</div></figure><p id="1af30315-b565-4a81-98b3-fb7ec4c00db5" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="360a361c-ca2d-42de-8aa9-4666a8f90ed4" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2017.png"><img style="width:336px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2017.png"/></a></figure><hr id="03b2114f-b244-438c-9c8a-d12bf0d79f26"/><h2 id="f4c86fd5-074a-4d7b-9164-8945faeb965b" class="">Paso 7</h2><p id="352b71fc-0191-4962-a91f-6510fc84baf4" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="7c9573fc-760c-4c12-b652-190c850c111e" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2018.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2018.png"/></a></figure><p id="868d5f6c-7422-4c30-ab9e-bfea3765933c" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Ajustar el angulo del servo motor antes de la instalacion</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="1a0da9fd-d909-466c-9c5b-0eaa87a6324d" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2019.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2019.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0bfc1005-e7e5-4e6b-9e08-181dccf28efa"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Se necesita ajustar el angulo del motor antes de la instalación. Usar el archivo que le proporcionará el docente y grabelo en su ESP32.</div></figure><p id="47b2d723-58e0-491f-8046-479f78575a9f" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="eb72fe54-19dc-4538-a20d-c2dc7428ec12" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2020.png"><img style="width:288px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2020.png"/></a></figure><p id="8ac7177f-7b3d-46f0-b2c5-731a66c5f0a9" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="c193dc63-d783-45ff-841c-c8996707cfb7" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2021.png"><img style="width:288px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2021.png"/></a></figure><hr id="05aee6ce-319b-493e-9c4c-99854ec70459"/><h2 id="95889a2e-aa6b-4812-8fe0-420adfb75239" class="">Paso 8</h2><p id="be0215fd-0fa3-4fda-b21e-2116b36399cd" class=""><strong>Componentes requeridos</strong></p><figure id="cf4b878f-605d-4fd4-9615-976ae10d962e" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2022.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2022.png"/></a></figure><p id="f6fbeb5f-64e4-4543-ab64-c2a4b8784a0d" class=""><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></p><figure id="ce69266e-6cbe-423e-aebb-fa3b0bea7d00" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2023.png"><img style="width:336px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2023.png"/></a></figure><p id="944b39f6-be88-4351-9d9e-3ae5d0cf0e56" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="b0050d32-fcb3-4b8b-a238-47fa10de75fd" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2024.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2024.png"/></a></figure><hr id="e8a9e2a4-9a10-4fbb-b93c-179cc86a97bb"/><h2 id="7b8f5c41-2e6f-4c89-9476-ece14c501463" class="">Paso 9</h2><p id="8a901302-e642-44f5-85b7-ce3371589a2b" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="4d62216e-0f58-4105-8253-d551e186942e" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2025.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2025.png"/></a></figure><p id="8b46fb9a-dd11-4daa-986e-d604059e35e9" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="3b48eacc-63e7-4ad0-9299-3b56ee1a9638" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2026.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2026.png"/></a></figure><p id="04edf934-3361-4101-953b-b5295ac24281" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="6680a02b-18a8-49e7-9e63-331b0231f079" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2027.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2027.png"/></a></figure><hr id="fd31d3da-b7f0-40f6-90f2-6027ef6a87d7"/><h2 id="68bb6237-bfe3-426c-aeb3-cfc608dbf397" class="">Paso 10</h2><p id="837839b6-6952-45d2-840c-a8c9d65a34b9" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="29f6a4ff-caf1-4e24-9068-85c507123705" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2028.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2028.png"/></a></figure><p id="93ad7ebb-d2dd-4461-8ee4-0abece47627b" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="03e8cd88-c75c-4c40-9fbf-8def0e9f40a8" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2029.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2029.png"/></a></figure><p id="e1ddd9ca-094d-482a-a170-68072d2ce6b3" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="9db46515-58d9-401b-af68-35ed3d352951" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2030.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2030.png"/></a></figure><hr id="0823cb71-e2e5-476c-bf01-038a8a5ba618"/><h2 id="3a124cb4-e97e-41c4-9560-7be38a70f0dc" class="">Paso 11</h2><p id="fae66f49-bca0-41a9-92b0-94067e708262" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="f03fa6b4-de11-4629-94b3-e9856f10eea5" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2031.png"><img style="width:576px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2031.png"/></a></figure><p id="647a09d7-bb9a-4b61-8a34-890f629ca13e" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="5102e8e0-a744-49c8-a47a-20acb3aca296" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2032.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2032.png"/></a></figure><p id="3a5301ad-64dd-4796-a61c-f49b31d4fa78" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="84af7457-8377-4baf-8661-a6242f02a2f3" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2033.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2033.png"/></a></figure><hr id="7e05240e-2250-46b4-9a40-f3a83194b53e"/><h2 id="d74b4e65-dff0-4511-953b-f2a87ecd8b01" class="">Paso 12</h2><p id="23787c44-f71d-4b9c-a9af-944c70af297e" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="e7028293-0d73-410d-bb85-7f792d8ceda7" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2034.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2034.png"/></a></figure><p id="95606722-6a29-4302-9672-e535949ad5bf" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="fff8da14-d5d2-49ed-bb18-293174952379" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2035.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2035.png"/></a></figure><p id="4ef1f383-7b46-41a7-bdc3-d72e423920d8" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="a87071e0-3c74-4374-88c0-5c06d15a8343" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2036.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2036.png"/></a></figure><hr id="451e362a-87ae-4f97-bb11-4791707891bc"/><h2 id="deb15926-80a9-4653-aeca-3e2876a4065e" class="">Paso 13</h2><p id="ce19c609-47fd-4046-aa8e-a571c7847733" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="34e36768-7454-4829-88c9-b358c81c5bb8" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2037.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2037.png"/></a></figure><p id="046f8a3c-8f49-4da9-b170-06c29a434df0" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="27b28e02-a2eb-409f-9131-f12d86c22045" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2038.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2038.png"/></a></figure><p id="ed327151-168e-44aa-b5d4-f18cd89d9553" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="67ece790-081f-4344-a36e-9762fe6c1a3c" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2039.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2039.png"/></a></figure><hr id="5362e306-ab48-4e0a-ac57-afdb14e0447c"/><h2 id="e9267e27-1c95-4c60-a409-cf8786263ba0" class="">Paso 14</h2><p id="09f2e900-c072-4540-b43b-5c0d3f082591" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="04677ca1-4808-4ea6-9ade-675a0d78b564" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2040.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2040.png"/></a></figure><p id="9308778d-7740-4033-bd34-a081b6890a41" class=""><strong>Diagrama de instalación</strong></p><figure id="4e4d569f-97f8-4c58-82e2-cbc21ea00e2c" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2041.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2041.png"/></a></figure><p id="71851c99-5f78-4cc8-86bc-b00f8d11050a" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="0a13e993-9828-4907-b39c-a7a7c1a79b7c" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2042.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2042.png"/></a></figure><hr id="b70e0f70-e3e5-423e-86ff-57a51b4a1638"/><h2 id="f5a4cf1e-8d3d-4437-960c-72c69d55992d" class="">Paso 15</h2><p id="6288ee7e-9462-460b-b177-974c2cbda6d3" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="aa0f2d3a-1e17-4a86-a8ac-6bb151169369" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2043.png"><img style="width:624px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2043.png"/></a></figure><p id="a924d639-0673-485f-ab36-71481ac74045" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="d85b3fdb-bec6-4a96-bdd7-09de7b54ab06" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2044.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2044.png"/></a></figure><p id="53eecf41-b66d-44cc-a7bb-9db2d0aa9179" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="69197fc1-d196-47f9-b463-19e38ed173cd" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2045.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2045.png"/></a></figure><hr id="851cef42-0e40-4d66-a037-a1789749eaac"/><h2 id="46958fdb-ce5e-4493-af62-741b478c82a5" class="">Paso 16</h2><p id="e580d44d-f294-4eb0-aeba-6639f6dbad16" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="d1680d21-2f90-452d-96c5-fac3ef7f1367" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2046.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2046.png"/></a></figure><p id="83a921e7-c1c3-493d-ab9c-5bb2983079e6" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="4dced937-e10b-4960-b1de-f9a6f731c684" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2047.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2047.png"/></a></figure><hr id="94290c3c-371d-43cf-a62b-d061291b6052"/><h2 id="ce8919ad-ae5d-4091-9b79-2474c42ddec9" class="">Paso 17</h2><p id="1da7b5c8-d218-47d7-8781-efd7a1e7c0ed" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Componentes requeridos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="5584afce-7438-44c9-a793-ac93c222c989" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2048.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2048.png"/></a></figure><p id="2849551d-f78d-468f-a1dc-79a6cd3aa861" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Diagrama de instalación</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="0cb2e5cc-81f0-4ee9-a224-804e96c50a0f" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2049.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2049.png"/></a></figure><p id="5e1af072-9c1d-4247-8d93-0c286b9aea14" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong>Prototipo</strong></strong></strong></strong></strong></strong></strong></strong></strong></p><figure id="754c84d5-ee89-4a3d-b32c-28cae46e2902" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2050.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2050.png"/></a></figure><h1 id="33c9de92-d7cc-4952-b390-3ede9db78468" class="">Configuración</h1><p id="2a5f136d-2533-4921-8eb9-4730abd0a167" class="">La placa de desarrollo ESP32 necesita comunicarse con el computador y para lograrlo necesita un intermediario. Este componente es el <strong>driver</strong>, y debe ser instalado.</p><p id="607fe741-12ac-4dea-bb14-da85f1b1e89e" class="">Esta placa utiliza el chip <strong><strong><strong><strong><strong>CH340</strong></strong></strong></strong></strong>.</p><h3 id="f215a895-b26e-4613-9965-4ca2c0307902" class="">Instalación del driver CH340</h3><p id="353d83d2-436b-49c4-8113-28b45ed674e3" class="">En Windows 10 el driver es automaticamente instalado por el sistema operativo. De no ser así, seguir los siguientes pasos:</p><ol type="1" id="61aaa350-c741-4ecc-ab13-688a55882518" class="numbered-list" start="1"><li>Abrir <strong>Administrador de dipositivos.</strong></li></ol><figure id="4fea8053-86d9-4218-bcb9-67888466e0db" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2051.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2051.png"/></a></figure><ol type="1" id="6266cadb-3c1a-4ad8-95e5-0bd0ae6eff11" class="numbered-list" start="2"><li>Boton derecho sobre el USB-Serial y clikear en actualizar driver.</li></ol><figure id="84386bca-b5f3-44f0-88c4-2e340d55bfcb" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2052.png"><img style="width:384px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2052.png"/></a></figure><ol type="1" id="32690a10-f959-455f-978a-c796b2f74821" class="numbered-list" start="3"><li>Buscar el driver en la carpeta proporcionada.</li></ol><figure id="2f05e0d4-cfcb-47fc-8fd0-854f21c30ead" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2053.png"><img style="width:480px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2053.png"/></a></figure><ol type="1" id="2d32cd8f-95c8-4a46-a566-56044f427c15" class="numbered-list" start="4"><li>El driver se instalará y ahora debemos configurar el entorno de programación del software Arduino.</li></ol><h3 id="6eb17eaf-1b23-45f1-80a0-ddf897a168f4" class="">Configuración del IDE Arduino</h3><p id="fbc3ccab-a54d-415a-b15d-d02ed43e5fda" class="">Para poder programar el ESP32 con este <strong>IDE</strong>(Integrated Development Enviroment) se debe agregar la tarjeta de desarrollo a la base de datos de tarjetas del programa.</p><ol type="1" id="ae50863a-c1b3-4fe6-a827-614eebfbfe4c" class="numbered-list" start="1"><li>Abrir el IDE de Arduino y dirigirse a <strong>Preferencias</strong>.</li></ol><figure id="36f9c72f-8c45-4d85-b5ab-6590654e69d7" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2054.png"><img style="width:432px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2054.png"/></a></figure><ol type="1" id="58821bc8-f333-4f20-887a-b8d3e89b9638" class="numbered-list" start="2"><li>Copiar el siguiente link y pegarlo donde indica la imagen.
+</li></ol><pre id="eebddf81-5dda-4fad-b6b4-b462392e827f" class="code"><code>https://dl.espressif.com/dl/package_esp32_index.json</code></pre><figure id="03ea3587-3046-415d-ad88-397d0cdd4aec" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2055.png"><img style="width:576px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2055.png"/></a></figure><ol type="1" id="7f2a8992-1136-464e-8ce4-71f47c943cde" class="numbered-list" start="3"><li>En <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Herramientas</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> dirigirse a <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Gestor de tarjetas</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>.</li></ol><figure id="766a5d26-4cbb-4035-a609-230233bdca66" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2056.png"><img style="width:528px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2056.png"/></a></figure><ol type="1" id="04aa68fd-1f7f-4f4e-b217-08d466886a03" class="numbered-list" start="4"><li>Buscar <strong><strong><strong><strong><strong>ESP32</strong></strong></strong></strong></strong> e instalar.
+</li></ol><figure id="4ac5941d-0241-43e7-9454-700165ff4d20" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2057.png"><img style="width:720px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2057.png"/></a></figure><ol type="1" id="8535c792-990c-4853-8d72-08cf4d0f7c1a" class="numbered-list" start="5"><li>En <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Herramientas - &gt; Tarjetas</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> buscar <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ESP32 Arduino</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> y seleccionar <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ESP32 Dev Module</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>.
+</li></ol><figure id="a784a6f8-3d7b-44de-8eb4-f3cc010dc843" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2058.png"><img style="width:672px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2058.png"/></a></figure><figure id="49cb22da-2e18-4783-b7c8-381e023609d8" class="image"><a href="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2059.png"><img style="width:672px" src="Documento%20IoT%200b2aca7742014588be665db70fc155a8/Untitled%2059.png"/></a></figure><h2 id="9942feb9-9d45-4f4c-8fd6-567f10bb829c" class="">Cargando sketchs</h2><p id="a5301b90-0fbb-42bb-9d9c-6613ee2cf56f" class="">El primer programa que cargaremos en nuestra placa de desarrollo solo mostrará un mensaje por la consola de Arduino.</p><pre id="2e057708-8337-4de7-a77d-28749b7b312f" class="code"><code>void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  Serial.println(&quot;IoT&quot;);
+}</code></pre><p id="da95816c-b4ba-4a09-b644-9cef74011f2a" class="">Estos datos son enviados desde la placa de desarrollo hacia el computador a través del puerto USB usando comunicación serie.</p><p id="657be56e-8e4a-4d22-8d06-589aacb35b48" class="">Si este programa funciona entonces estamos listos para comenzar a programar los componentes.</p><h1 id="b8cf3e61-b2c5-40d3-b053-e0bd54d91e03" class="">Sketchs</h1><h2 id="3203fb78-b97a-43f1-920d-00e8924f983f" class="">Sketch 1 - LED</h2><p id="92c7da1b-bff8-43e0-8a8c-b75d6a6dfd4e" class="">LED parpadeante.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e4a557a6-4c5c-4a0c-aa1c-cec890f10be4"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Debe conectar el LED al pin 12 de la placa de desarrollo.</div></figure><pre id="ed9c4f6d-3a73-40b6-b13e-457f606da1d6" class="code"><code>void setup() {    //Este codigo se ejecuta una unica vez
+  pinMode(12, OUTPUT);  //Se declara que el pin 12 será utilizado como salida
+}
+
+void loop() {     //Este codigo se repite constantemente
+  digitalWrite(12, HIGH);  //Se enciende la salida 12
+  delay(200);     //El codigo se pausa por 0.2 segundos (200ms)
+  digitalWrite(12, LOW);   //Se apaga la salida 12
+  delay(200); //El codigo se pausa por 0.2 segundos (200ms)
+}</code></pre><h2 id="5b098f90-2454-4fe9-980a-7c5dd920c6a0" class="">Sketch 2 - Buzzer</h2><p id="8b9fb1aa-a3ba-4c28-a4b7-fcb6da0b7328" class="">Este sketch reproduce una melodía a través de un <strong>Buzzer</strong>.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ec8d16cb-082d-45a2-87e7-ed5f117d4eeb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Conecta el buzzer al pin 25.</div></figure><pre id="5d4b57af-930d-47e9-9103-2b5d42b0b0f5" class="code"><code>#include &lt;ESP32Tone.h&gt;
+#define buzzer_pin 25
+
+void setup() {
+  pinMode(buzzer_pin, OUTPUT);
+  birthday();
+}
+
+void loop() {
+  
+}
+
+void birthday()
+{
+  tone(buzzer_pin,294,250,0);  //The four parameters are pin, frequency, delay and channel 
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,494,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,587,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,784,250,0);
+  tone(buzzer_pin,659,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,494,250,0);
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,698,250,0);
+  tone(buzzer_pin,659,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,587,250,0);
+  tone(buzzer_pin,532,500,0);
+  noTone(buzzer_pin,0);  //Close
+}</code></pre><p id="efe4ba61-8d42-4c5c-837c-260b54400519" class="">¿Notaste que existe un error? esto se debe a que es necesario instalar la libreria <strong>ESP32Tone.h</strong>. Preguntale a tu profesor como instalarlo, el te guiará en el proceso.</p><h2 id="0d4937c0-721a-4355-9e0c-23b10a989e7d" class="">Sketch 3 - Temperatura y humedad ambiente</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3866b091-fae5-4c94-b2f0-2d98ba94b531"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Conecta el sensor al pin 17.
+Conecta la pantalla al conector I2C.</div></figure><p id="902ab8e4-0934-490e-8cc0-60859051cc3b" class=""><strong>¿Que es I2C?</strong></p><p id="57b56d24-6b8d-401d-86b1-ea3718feec3d" class="">Es un protocolo de comunicación serial que permite la transferencia de datos entre dispositivos electrónicos.</p><p id="a5a5bda5-bad8-4fb1-bbbb-dc5503e151d0" class="">Nosotros la utilizaremos para comunicar la pantalla y el ESP32.</p><pre id="80e3f5b7-008c-41eb-9589-5c558f48549c" class="code"><code>#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C mylcd(0x27,16,2);
+#include &quot;xht11.h&quot;
+xht11 xht(17);
+
+unsigned char dht[4] = {0, 0, 0, 0};//Only the first 32 bits of data are received, not the parity bits
+void setup() {
+  Serial.begin(9600);//Start the serial port monitor and set baud rate to 9600
+  mylcd.init();
+  mylcd.backlight();
+}
+
+void loop() {
+  if (xht.receive(dht)) { 
+    Serial.print(&quot;RH:&quot;);
+    Serial.print(dht[0]); 
+    Serial.print(&quot;%  &quot;);
+    Serial.print(&quot;Temp:&quot;);
+    Serial.print(dht[2]);
+    Serial.println(&quot;C&quot;);
+    
+    mylcd.setCursor(0, 0);
+    mylcd.print(&quot;T = &quot;);
+    mylcd.print(dht[2]);
+    mylcd.setCursor(0, 1);
+    mylcd.print(&quot;H = &quot;);
+    mylcd.print(dht[0]);
+    //mylcd.clear();
+    delay(200);
+  } else {    //Read error
+    Serial.println(&quot;sensor error&quot;);
+  }
+  delay(1000);
+}
+</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0bc0bde1-dda8-4466-a0b7-a752083f240b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Intenta mostrar la temperatura y la humedad en una posición distinta en la pantalla.</div></figure><h2 id="8903b987-35a1-472c-947f-f8fae1170920" class="">Sketch 4 - Conexión con APP</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dc05334f-5260-4557-9d08-c1d0c2eb663e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Intenta descubrir como utilizar los demas dispositivos de la Smart Home.
+<strong>¡Diviertete!</strong></div></figure><pre id="024cb169-2b62-4cea-9dd8-fa123f7bb884" class="code"><code>#include &lt;WiFi.h&gt;
+#include &lt;ESPmDNS.h&gt;
+#include &lt;WiFiClient.h&gt;
+#include &lt;Adafruit_NeoPixel.h&gt;
+#define LED_PIN    26
+// How many NeoPixels are attached to the Arduino?
+#define LED_COUNT 4
+// Declare our NeoPixel strip object:
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+String item = &quot;0&quot;;
+const char* ssid = &quot;NOMBRE_DE_SU_RED&quot;;
+const char* password = &quot;CONTRASEÑA_DE_SU_RED&quot;;
+WiFiServer server(80);
+
+#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C mylcd(0x27,16,2);
+//#include &lt;analogWrite.h&gt;
+#include &quot;xht11.h&quot;
+xht11 xht(17);
+//#include &lt;ESP32_Servo.h&gt;
+//Servo Wservo;
+//Servo Dservo;
+#include &lt;ESP32Tone.h&gt;
+#define buzzer_pin 25
+//#define windowServo 5
+//#define doorServo 13
+#define waterPin 34
+#define fanPin1 19
+#define fanPin2 18
+#define led_y 12  //Define the yellow led pin to 12
+
+#define waterPin 34
+#define gasPin 23
+#define pyroelectric 14
+
+unsigned char dht[4] = {0, 0, 0, 0};//Only the first 32 bits of data are received, not the parity bits
+
+//Servo channel
+int channel_PWM = 13;
+int channel_PWM2 = 10;
+int freq_PWM = 50; 
+int resolution_PWM = 10;
+const int PWM_Pin1 = 5;
+const int PWM_Pin2 = 13;
+
+
+
+
+void setup() {
+  Serial.begin(115200);
+  mylcd.init();
+  mylcd.backlight();
+  pinMode(led_y, OUTPUT);
+  pinMode(fanPin1, OUTPUT);
+  pinMode(fanPin2, OUTPUT);
+  ledcSetup(5, 1200, 8);//Set the frequency of LEDC channel 1 to 1200 and PWM resolution to 8, that is duty cycle to 256.  
+  ledcAttachPin(fanPin2, 5);  //Bind the LEDC channel 1 to the specified left motor pin GPIO26 for output.  
+  pinMode(waterPin, INPUT);
+  pinMode(buzzer_pin, OUTPUT);
+  pinMode(gasPin, INPUT);
+  pinMode(pyroelectric, INPUT);
+  ledcSetup(channel_PWM, freq_PWM, resolution_PWM); //Set servo channel and frequency as well as PWM resolution.
+  ledcSetup(channel_PWM2, freq_PWM, resolution_PWM);
+  ledcAttachPin(PWM_Pin1, channel_PWM);  //Binds the LEDC channel to the specified IO port for output
+  ledcAttachPin(PWM_Pin2, channel_PWM2);  //Binds the LEDC channel to the specified IO port for output
+//  Wservo.attach(windowServo);
+//  Dservo.attach(doorServo);
+//  #if defined(__AVR_ATtiny85__) &amp;&amp; (F_CPU == 16000000)
+//    clock_prescale_set(clock_div_1);
+//  #endif
+//    // END of Trinket-specific code.
+//  strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+//  strip.show();            // Turn OFF all pixels ASAP
+//  strip.setBrightness(50); // Set BRIGHTNESS to about 1/5 (max = 255)
+  
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(&quot;.&quot;);
+  }
+  Serial.println(&quot;&quot;);
+  Serial.print(&quot;Connected to &quot;);
+  Serial.println(ssid);
+  Serial.print(&quot;IP address: &quot;);
+  Serial.println(WiFi.localIP());
+  server.begin();
+  Serial.println(&quot;TCP server started&quot;);
+  MDNS.addService(&quot;http&quot;, &quot;tcp&quot;, 80);
+  mylcd.setCursor(0, 0);
+  mylcd.print(&quot;ip:&quot;);
+  mylcd.setCursor(0, 1);
+  mylcd.print(WiFi.localIP());  //LCD displays ip adress
+}
+
+void loop() {
+  WiFiClient client = server.available();
+  if (!client) {
+      return;
+  }
+  while(client.connected() &amp;&amp; !client.available()){
+      delay(1);
+  }
+  String req = client.readStringUntil(&#x27;\r&#x27;);
+  int addr_start = req.indexOf(&#x27; &#x27;);
+  int addr_end = req.indexOf(&#x27; &#x27;, addr_start + 1);
+  if (addr_start == -1 || addr_end == -1) {
+      Serial.print(&quot;Invalid request: &quot;);
+      Serial.println(req);
+      return;
+  }
+  req = req.substring(addr_start + 1, addr_end);
+  item=req;
+  Serial.println(item);
+  String s;
+  if (req == &quot;/&quot;)  //Browser accesses address can read the information sent by the client.println(s);
+  {
+      IPAddress ip = WiFi.localIP();
+      String ipStr = String(ip[0]) + &#x27;.&#x27; + String(ip[1]) + &#x27;.&#x27; + String(ip[2]) + &#x27;.&#x27; + String(ip[3]);
+      s = &quot;HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n&lt;!DOCTYPE HTML&gt;\r\n&lt;html&gt;ESP32 ip:&quot;;
+      s += ipStr;
+      s += &quot;&lt;/html&gt;\r\n\r\n&quot;;
+      Serial.println(&quot;Sending 200&quot;);
+      client.println(s);  //Send the string S, then you can read the information when visiting the address of E smart home using the browser.
+  }
+  if(req == &quot;/led/on&quot;) //Browser accesses address ip address/led/on
+  {
+    client.println(&quot;turn on the LED&quot;);
+    digitalWrite(led_y, HIGH);
+  }
+  if(req == &quot;/led/off&quot;) //Browser accesses address ip address/led/off
+  {
+    client.println(&quot;turn off the LED&quot;);
+    digitalWrite(led_y, LOW);
+  }
+  if(req == &quot;/window/on&quot;)
+  {
+    client.println(&quot;open the window&quot;);
+    ledcWrite(channel_PWM, 100);  //The high level of 20ms is about 2.5ms, that is, 2.5/20*1024, at this time, the servo angle is 180°.  
+    //Wservo.write(175);
+  }
+  if(req == &quot;/window/off&quot;)
+  {
+    client.println(&quot;close the window&quot;);
+    ledcWrite(channel_PWM, 60);  //The high level of 20ms is about 0.5ms，that is, 0.5/20*1024，at this time, the servo angle is 0°.
+    //Wservo.write(0);
+  }
+  if(req == &quot;/music/on&quot;)
+  {
+    //client.println(&quot;play music&quot;);
+  }
+  if(req == &quot;/music/off&quot;)
+  {
+    client.println(&quot;play music&quot;);
+    birthday();
+    noTone(buzzer_pin,0);
+  }
+  if(req == &quot;/buz/on&quot;)
+  {
+    client.println(&quot;buzzer&quot;);
+    tone(buzzer_pin,392,250,0);
+    Serial.println(&quot;1&quot;);
+  }
+  if(req == &quot;/buz/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+    noTone(buzzer_pin,0);
+  }
+  if(req == &quot;/door/on&quot;)
+  {
+    client.println(&quot;open the door&quot;);
+    ledcWrite(channel_PWM2, 120);
+//    Dservo.write(180);
+  }
+  if(req == &quot;/door/off&quot;)
+  {
+    client.println(&quot;close the door&quot;);
+     ledcWrite(channel_PWM2, 20);
+//    Dservo.write(0);
+  }
+  if(req == &quot;/fan/on&quot;)
+  {
+    client.println(&quot;turn on the fan&quot;);
+    digitalWrite(fanPin1, LOW); //pwm = 0
+    ledcWrite(5, 100); //The LEDC channel 1 is bound to the specified left motor output PWM value of 100.
+  }
+  if(req == &quot;/fan/off&quot;)
+  {
+    client.println(&quot;turn off the fan&quot;);
+    digitalWrite(fanPin1, LOW); //pwm = 0
+    ledcWrite(5, 0); //The LEDC channel 1 is bound to the specified left motor output PWM value of 0.
+  }
+  if(req == &quot;/red/on&quot;)
+  {
+    client.println(&quot;red on&quot;);
+    colorWipe(strip.Color(255,   0,   0), 50);
+  }
+  if(req == &quot;/red/off&quot;)
+  {
+    client.println(&quot;red off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/oringe/on&quot;)
+  {
+    client.println(&quot;oringe on&quot;);
+    colorWipe(strip.Color(200,   100,   0), 50);
+  }
+  if(req == &quot;/oringe/off&quot;)
+  {
+    client.println(&quot;oringe off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/yellow/on&quot;)
+  {
+    client.println(&quot;yellow on&quot;);
+    colorWipe(strip.Color(200,   200,   0), 50);
+  }
+  if(req == &quot;/yellow/off&quot;)
+  {
+    client.println(&quot;yellow off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/green/on&quot;)
+  {
+    client.println(&quot;green on&quot;);
+    colorWipe(strip.Color(0,   255,   0), 50);
+  }
+  if(req == &quot;/green/off&quot;)
+  {
+    client.println(&quot;green off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/cyan/on&quot;)
+  {
+    client.println(&quot;cyan on&quot;);
+    colorWipe(strip.Color(0,   100,   255), 50);
+  }
+  if(req == &quot;/cyan/off&quot;)
+  {
+    client.println(&quot;cyan off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/blue/on&quot;)
+  {
+    client.println(&quot;blue on&quot;);
+    colorWipe(strip.Color(0,   0,   255), 50);
+  }
+  if(req == &quot;/blue/off&quot;)
+  {
+    client.println(&quot;blue off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/purple/on&quot;)
+  {
+    client.println(&quot;purple on&quot;);
+    colorWipe(strip.Color(100,   0,   255), 50);
+  }
+  if(req == &quot;/purple/off&quot;)
+  {
+    client.println(&quot;purple off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/white/on&quot;)
+  {
+    client.println(&quot;white on&quot;);
+    colorWipe(strip.Color(255,   255,   255), 50);
+  }
+  if(req == &quot;/white/off&quot;)
+  {
+    client.println(&quot;white off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/sfx1/on&quot;)
+  {
+    client.println(&quot;sfx1 on&quot;);
+    rainbow(10);
+  }
+  if(req == &quot;/sfx1/off&quot;)
+  {
+    client.println(&quot;sfx1 off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+  if(req == &quot;/sfx2/on&quot;)
+  {
+    client.println(&quot;sfx2 on&quot;);
+    theaterChaseRainbow(50);
+  }
+  if(req == &quot;/sfx2/off&quot;)
+  {
+    client.println(&quot;sfx2 off&quot;);
+    colorWipe(strip.Color(0,   0,   0), 50);
+  }
+
+
+  if(req == &quot;/rain/on&quot;)
+  {
+    int rainVal = analogRead(waterPin);
+    client.println(rainVal);
+  }
+  if(req == &quot;/rain/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+  }
+  if(req == &quot;/gas/on&quot;)
+  {
+    boolean gasVal = analogRead(gasPin);
+    if(gasVal == 0)
+    {
+      client.println(&quot;safety&quot;);
+    }
+    else
+    {
+      client.println(&quot;dangerous&quot;);
+    }
+  }
+  if(req == &quot;/gas/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+  }
+  if(req == &quot;/body/on&quot;)
+  {
+    boolean pyroelectric_val = digitalRead(pyroelectric);
+    if(pyroelectric_val == 1)
+    {
+      client.println(&quot;someone&quot;);
+    }
+    else
+    {
+      client.println(&quot;no one&quot;);
+    }
+  }
+  if(req == &quot;/body/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+  }
+  if(req == &quot;/temp/on&quot;)
+  {
+    if (xht.receive(dht)) { //Returns true when checked correctly
+      Serial.print(&quot;Temp:&quot;);
+      Serial.print(dht[2]); //The integral part of temperature, DHT [3] is the fractional part
+      Serial.println(&quot;C&quot;);
+      delay(200);
+    } else {    //Read error
+      Serial.println(&quot;sensor error&quot;);
+    }
+    client.println(dht[2]);
+    delay(1000);  //It takes 1000ms to wait for the device to read
+  }
+  if(req == &quot;/temp/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+  }
+  if(req == &quot;/humidity/on&quot;)
+  {
+    if (xht.receive(dht)) { //Returns true when checked correctly
+      Serial.print(&quot;Temp:&quot;);
+      Serial.print(dht[0]); //The integral part of temperature, DHT [3] is the fractional part
+      Serial.println(&quot;%&quot;);
+      delay(200);
+    } else {    //Read error
+      Serial.println(&quot;sensor error&quot;);
+    }
+    client.println(dht[0]);
+    delay(1000);  //It takes 1000ms to wait for the device to read
+  }
+  if(req == &quot;/humidity/off&quot;)
+  {
+    client.println(&quot;off&quot;);
+  }
+
+  
+  //client.stop();
+}
+
+
+void birthday()
+{
+  tone(buzzer_pin,294,250,0);  //The four parameters are pin, frequency, delay and channel 
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,494,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,587,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,392,250,0);
+  tone(buzzer_pin,784,250,0);
+  tone(buzzer_pin,659,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,494,250,0);
+  tone(buzzer_pin,440,250,0);
+  tone(buzzer_pin,698,250,0);
+  tone(buzzer_pin,659,250,0);
+  tone(buzzer_pin,532,250,0);
+  tone(buzzer_pin,587,250,0);
+  tone(buzzer_pin,532,500,0);
+  noTone(buzzer_pin,0);  //关闭
+}
+
+void colorWipe(uint32_t color, int wait) {
+  for(int i=0; i&lt;strip.numPixels(); i++) { // For each pixel in strip...
+    strip.setPixelColor(i, color);         //  Set pixel&#x27;s color (in RAM)
+    strip.show();                          //  Update strip to match
+    delay(wait);                           //  Pause for a moment
+  }
+}
+
+// Rainbow cycle along whole strip. Pass delay time (in ms) between frames.
+void rainbow(int wait) {
+  for(long firstPixelHue = 0; firstPixelHue &lt; 5*65536; firstPixelHue += 256) {
+    for(int i=0; i&lt;strip.numPixels(); i++) { // For each pixel in strip...
+      int pixelHue = firstPixelHue + (i * 65536L / strip.numPixels());
+      strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
+    }
+    strip.show(); // Update strip with new contents
+    delay(wait);  // Pause for a moment
+  }
+}
+
+// Rainbow-enhanced theater marquee. Pass delay time (in ms) between frames.
+void theaterChaseRainbow(int wait) {
+  int firstPixelHue = 0;     // First pixel starts at red (hue 0)
+  for(int a=0; a&lt;30; a++) {  // Repeat 30 times...
+    for(int b=0; b&lt;3; b++) { //  &#x27;b&#x27; counts from 0 to 2...
+      strip.clear();         //   Set all pixels in RAM to 0 (off)
+      // &#x27;c&#x27; counts up from &#x27;b&#x27; to end of strip in increments of 3...
+      for(int c=b; c&lt;strip.numPixels(); c += 3) {
+        int      hue   = firstPixelHue + c * 65536L / strip.numPixels();
+        uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // hue -&gt; RGB
+        strip.setPixelColor(c, color); // Set pixel &#x27;c&#x27; to value &#x27;color&#x27;
+      }
+      strip.show();                // Update strip with new contents
+      delay(wait);                 // Pause for a moment
+      firstPixelHue += 65536 / 90; // One cycle of color wheel over 90 frames
+    }
+  }
+}</code></pre><ul id="9e150fa8-525e-4f81-8e08-b57ff87ca234" class="bulleted-list"><li style="list-style-type:disc">Te invito a mostrar la temperatura y la humedad en la pantalla.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
